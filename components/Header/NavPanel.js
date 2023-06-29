@@ -37,7 +37,7 @@ const NavPanel = () => {
   const currentRoute = router.pathname;
 
   return (
-    <div className="bg-[#843332] h-16 lg:h-20 absolute top-20 left-0 right-0">
+    <div className="bg-[#843332] h-16 lg:h-20 absolute top-20 left-0 right-0 shadow-lg">
       <div className="flex justify-center m-auto h-16 lg:h-20">
         {pages.map((el) => (
           <Link

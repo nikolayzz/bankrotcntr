@@ -21,15 +21,11 @@ const theme = createTheme({
   },
 });
 
-// const containerStyle = {
-
-// }
-
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Container className={montserrat.className}>
-        <div>
+        <div className="text-[#4A0A09]">
           <Header />
           <div className="mt-28">
             <Component {...pageProps} />

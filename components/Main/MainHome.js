@@ -1,7 +1,7 @@
-import Services from "@/pages/services";
 import HomeBanner from "./HomeBanner";
 import HomeTabs from "./HomeTabs";
 import HomeText from "./HomeText";
+import ServicesList from "../Services/ServicesList";
 
 const MainHome = () => {
   return (
@@ -10,7 +10,7 @@ const MainHome = () => {
         <HomeBanner />
       </div>
       <div className="my-16">
-        <Services />
+        <ServicesList title={"Услуги"} />
       </div>
       <div className="my-16">
         <HomeText />

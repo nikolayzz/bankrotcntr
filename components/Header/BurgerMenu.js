@@ -34,12 +34,12 @@ const BurgerMenu = () => {
           <List sx={{ paddingTop: "100px" }}>
             <Divider />
             {pages.map((el) => (
-              <>
-                <ListItem key={el.id} sx={{ paddingBottom: "30px" }}>
-                  <Link href={el.path}> {el.title}</Link>
+              <div key={el.id}>
+                <ListItem sx={{ paddingBottom: "30px" }}>
+                  <Link href={el.path}>{el.title}</Link>
                 </ListItem>
                 <Divider />
-              </>
+              </div>
             ))}
           </List>
         </Box>
