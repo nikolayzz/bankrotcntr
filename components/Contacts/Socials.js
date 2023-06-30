@@ -36,9 +36,9 @@ const igIcon = (
   </svg>
 );
 
-const Socials = () => {
+const Socials = ({ justify }) => {
   return (
-    <div className="flex">
+    <div className={`${justify} flex `}>
       <Link
         href="https://vk.com/bankrot_cntr"
         target="_blank"
