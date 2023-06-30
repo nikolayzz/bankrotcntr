@@ -3,7 +3,6 @@ import { Box, Divider, List, ListItem, SwipeableDrawer } from "@mui/material";
 import { useState } from "react";
 import { pages } from "../Header/NavPanel";
 import Link from "next/link";
-import LogoHeader from "./LogoHeader";
 import Image from "next/image";
 
 const BurgerMenu = () => {
@@ -57,6 +56,10 @@ const BurgerMenu = () => {
               </div>
             ))}
           </List>
+          <div className="text-center absolute bottom-20 left-1/2 translate-x-[-50%] ">
+            <h2 className="text-xl font-bold uppercase">Центр банкротства</h2>
+            <p className="text-sm mt-2 font-">Ваша финансовая свобода</p>
+          </div>
         </Box>
       </SwipeableDrawer>
     </>
