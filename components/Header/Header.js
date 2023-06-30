@@ -7,9 +7,9 @@ import BurgerMenu from "./BurgerMenu";
 
 const Header = () => {
   return (
-    <div className="mt-4 sm:mt-0">
+    <header className="mt-4 sm:mt-0 relative">
       <div className="h-20 flex justify-between items-center text-[#4A0A09]">
-        <LogoHeader />
+        <LogoHeader isText={true} />
         <div className="hidden lg:inline-block">
           <Info />
         </div>
@@ -19,14 +19,14 @@ const Header = () => {
         <div className="hidden md:inline-block">
           <CallButton />
         </div>
-        <div className="inline-block md:hidden">
+        <div className="inline-block sticky md:hidden">
           <BurgerMenu />
         </div>
       </div>
       <div className="hidden sm:inline-block">
         <NavPanel />
       </div>
-    </div>
+    </header>
   );
 };
 

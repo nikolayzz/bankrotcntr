@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const LogoHeader = () => {
+const LogoHeader = ({ isText }) => {
   return (
     <Link href="/">
       <div className="flex items-center">
@@ -13,7 +13,11 @@ const LogoHeader = () => {
           alt="logo"
           priority
         />
-        <span className="uppercase text-xl font-bold">Центр банкротства</span>
+        <span
+          className={`${isText ? "" : "hidden"} uppercase text-xl font-bold`}
+        >
+          Центр банкротства
+        </span>
       </div>
     </Link>
   );

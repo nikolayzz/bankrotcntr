@@ -3,6 +3,8 @@ import { Box, Divider, List, ListItem, SwipeableDrawer } from "@mui/material";
 import { useState } from "react";
 import { pages } from "../Header/NavPanel";
 import Link from "next/link";
+import LogoHeader from "./LogoHeader";
+import Image from "next/image";
 
 const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
@@ -18,9 +20,9 @@ const BurgerMenu = () => {
       <SwipeableDrawer
         PaperProps={{
           sx: {
-            width: "50%",
-            backgroundColor: "#fafafa",
-            color: "#4A0A09",
+            width: "100%",
+            backgroundColor: "#843332",
+            color: "#fafafa",
             fontWeight: "bold",
             textTransform: "uppercase",
           },
@@ -31,12 +33,25 @@ const BurgerMenu = () => {
         onClose={() => toggleDrawer(false)}
       >
         <Box onClick={() => toggleDrawer(false)}>
-          <List sx={{ paddingTop: "100px" }}>
-            <Divider />
+          <div className="bg-[#fafafa]">
+            <Image
+              src="/images/m-logo.png"
+              height={100}
+              width={100}
+              className="h-auto w-auto m-auto"
+              alt="logo"
+              priority
+            />
+          </div>
+
+          <List sx={{ paddingTop: "30px" }}>
+            {/* <Divider /> */}
             {pages.map((el) => (
               <div key={el.id}>
                 <ListItem sx={{ paddingBottom: "30px" }}>
-                  <Link href={el.path}>{el.title}</Link>
+                  <Link className="w-full" href={el.path}>
+                    {el.title}
+                  </Link>
                 </ListItem>
                 <Divider />
               </div>
