@@ -17,7 +17,10 @@ const Contacts = () => {
         </div>
         <YMaps>
           <div>
-            <Map defaultState={{ center: [46.310264, 44.264486], zoom: 17 }}>
+            <Map
+              width={"80%"}
+              defaultState={{ center: [46.310264, 44.264486], zoom: 17 }}
+            >
               <Placemark geometry={[46.310264, 44.264486]} />
             </Map>
           </div>

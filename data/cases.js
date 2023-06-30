@@ -15,7 +15,6 @@ export const cases = [
     id: 3,
     number: "А22-2842/2020",
     name: "Бузулуков А В",
-
     link: "https://kad.arbitr.ru/Card/8d1fa0a2-9cb8-4e78-8a02-790563fdf489",
   },
   {
