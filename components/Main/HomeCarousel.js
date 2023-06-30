@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
-import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const slides = [
   {
-    path: "/images/logo.jpg",
+    path: '/images/logo.jpg',
   },
   {
-    path: "/images/car1.jpg",
+    path: '/images/car1.jpg',
   },
   {
-    path: "/images/car2.jpg",
+    path: '/images/car2.jpg',
   },
 ];
 
@@ -58,13 +58,13 @@ const HomeCarousel = () => {
       ></div>
       <div
         onClick={prevSlide}
-        className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-[#843332]/20 text-black cursor-pointer"
+        className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl text-black cursor-pointer"
       >
         <ChevronLeftRoundedIcon color="primary" />
       </div>
       <div
         onClick={nextSlide}
-        className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-[#843332]/20 text-black cursor-pointer"
+        className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl text-black cursor-pointer"
       >
         <ChevronRightRoundedIcon color="primary" />
       </div>
