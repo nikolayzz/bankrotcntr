@@ -337,4 +337,34 @@ export const cases = [
     name: 'Ванькаева Г Х Ванькаев А М',
     link: 'https://kad.arbitr.ru/Card/2968b2de-0a13-437f-b91c-fbc476d59133',
   },
+  {
+    id: 57,
+    number: 'А22-3405/2022',
+    name: 'Комушев С Ц',
+    link: 'https://kad.arbitr.ru/Card/7841292b-f1d8-4a7a-a40e-ffedf738b493',
+  },
+  {
+    id: 58,
+    number: 'А22-3404/2022',
+    name: 'Атюева А М',
+    link: 'https://kad.arbitr.ru/Card/02814dc7-63e7-4fff-9f16-eada24a8e7be',
+  },
+  {
+    id: 59,
+    number: 'А22-279/2021',
+    name: 'Ользятиева С А',
+    link: 'https://kad.arbitr.ru/Card/d2cc30fd-6893-4919-b107-caf29eb0361f',
+  },
+  {
+    id: 60,
+    number: 'А22-2844/2021',
+    name: 'Джамбинова Ю П',
+    link: 'https://kad.arbitr.ru/Card/a0892d58-30bc-4ee9-b232-6cae4e32368f',
+  },
+  {
+    id: 61,
+    number: 'А22-1897/2021',
+    name: 'Блинникова К С',
+    link: 'https://kad.arbitr.ru/Card/1cb29bc8-d6c8-4052-bb5e-df091ec71b99',
+  },
 ];

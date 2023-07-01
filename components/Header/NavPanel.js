@@ -1,34 +1,45 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "../../styles/NavPanel.module.css";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import styles from '../../styles/NavPanel.module.css';
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 
 export const pages = [
   {
     id: 1,
-    title: "Главная",
-    path: "/",
+    title: 'Главная',
+    path: '/',
   },
   {
     id: 2,
-    title: "Услуги",
-    path: "/services",
+    title: 'Услуги',
+    path: '/services',
   },
   {
     id: 3,
-    title: "Практика",
-    path: "/practice",
+    title: 'Практика',
+    path: '/practice',
   },
   {
     id: 4,
-    title: "Статьи",
-    path: "/articles",
+    title: 'Статьи',
+    path: '/articles',
   },
   {
     id: 5,
-    title: "Контакты",
-    path: "/contacts",
+    title: 'Контакты',
+    path: '/contacts',
   },
 ];
 
@@ -36,8 +47,9 @@ const NavPanel = () => {
   const router = useRouter();
   const currentRoute = router.pathname;
 
+  // old navbar without mui
   return (
-    <div className="bg-[#843332] h-16 lg:h-20 absolute top-20 left-0 right-0 shadow-lg">
+    <div className="bg-[#843332] h-16 lg:h-20 shadow-lg rounded-sm">
       <div className="flex justify-center m-auto h-16 lg:h-20">
         {pages.map((el) => (
           <Link

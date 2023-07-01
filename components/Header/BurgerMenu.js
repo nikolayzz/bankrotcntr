@@ -1,9 +1,10 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import { Box, Divider, List, ListItem, SwipeableDrawer } from "@mui/material";
-import { useState } from "react";
-import { pages } from "../Header/NavPanel";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { Box, Divider, List, ListItem, SwipeableDrawer } from '@mui/material';
+import { pages } from '../Header/NavPanel';
 
 const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
@@ -19,11 +20,11 @@ const BurgerMenu = () => {
       <SwipeableDrawer
         PaperProps={{
           sx: {
-            width: "100%",
-            backgroundColor: "#843332",
-            color: "#fafafa",
-            fontWeight: "bold",
-            textTransform: "uppercase",
+            width: '100%',
+            backgroundColor: '#843332',
+            color: '#fafafa',
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
           },
         }}
         anchor="right"
@@ -41,14 +42,25 @@ const BurgerMenu = () => {
               alt="logo"
               priority
             />
+            <div
+              className="absolute top-9 right-5"
+              onClick={() => toggleDrawer(false)}
+            >
+              <CloseIcon
+                fontSize="large"
+                color="primary"
+                viewBox="0 0 20 20"
+                // sx={{ position: 'absolute', top: '35px', right: '20px' }}
+              />
+            </div>
           </div>
 
-          <List sx={{ paddingTop: "30px" }}>
+          <List sx={{ paddingTop: '30px' }}>
             {/* <Divider /> */}
             {pages.map((el) => (
               <div key={el.id}>
-                <ListItem sx={{ paddingBottom: "30px" }}>
-                  <Link className="w-full" href={el.path}>
+                <ListItem sx={{ paddingBottom: '30px' }}>
+                  <Link className="w-full text-3xl" href={el.path}>
                     {el.title}
                   </Link>
                 </ListItem>
@@ -56,10 +68,6 @@ const BurgerMenu = () => {
               </div>
             ))}
           </List>
-          <div className="text-center absolute bottom-20 left-1/2 translate-x-[-50%] ">
-            <h2 className="text-xl font-bold uppercase">Центр банкротства</h2>
-            <p className="text-sm mt-2 font-">Ваша финансовая свобода</p>
-          </div>
         </Box>
       </SwipeableDrawer>
     </>

@@ -4,10 +4,10 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-} from "@mui/material";
-import CallForm from "../Main/CallForm";
-import CallFormButton from "../Main/CallFormButton";
-import { useState } from "react";
+} from '@mui/material';
+import CallForm from '../Main/CallForm';
+import CallFormButton from '../Main/CallFormButton';
+import { useState } from 'react';
 
 const CallButton = () => {
   const [open, setOpen] = useState(false);
@@ -30,9 +30,9 @@ const CallButton = () => {
         open={open}
         onClose={handleClose}
         sx={{
-          "& .MuiPaper-root": {
-            background: "#843332",
-            color: "white",
+          '& .MuiPaper-root': {
+            background: '#843332',
+            color: 'white',
           },
         }}
       >
@@ -45,7 +45,7 @@ const CallButton = () => {
             style={`bg-[#843332] max-w-xs m-auto text-white rounded-3xl p-7 text-center`}
           />
         </DialogContent>
-        <DialogActions sx={{ display: "flex", justifyContent: "space-evenly" }}>
+        <DialogActions sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <button
             className="bg-white text-[#4A0A09] h-8 p-5 rounded-2xl flex justify-center items-center font-semibold w-28"
             onClick={handleClose}

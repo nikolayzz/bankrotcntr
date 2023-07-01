@@ -1,12 +1,12 @@
-import "@/styles/globals.css";
-import { Montserrat } from "next/font/google";
-import { Container, ThemeProvider, createTheme } from "@mui/material";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import '@/styles/globals.css';
+import { Montserrat } from 'next/font/google';
+import { Container, ThemeProvider, createTheme } from '@mui/material';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 const montserrat = Montserrat({
-  weight: "400",
-  subsets: ["cyrillic"],
+  weight: '400',
+  subsets: ['cyrillic'],
 });
 
 const theme = createTheme({
@@ -15,9 +15,11 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#4A0A09",
+      main: '#4A0A09',
     },
-    bgButton: "#fafafa",
+    secondary: {
+      main: '#843332',
+    },
   },
 });
 
@@ -27,7 +29,7 @@ export default function App({ Component, pageProps }) {
       <Container className={montserrat.className}>
         <div className="text-[#4A0A09]">
           <Header />
-          <div className="mt-28">
+          <div className="mt-10">
             <Component {...pageProps} />
           </div>
           <Footer />

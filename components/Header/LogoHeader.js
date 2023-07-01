@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const LogoHeader = ({ isText }) => {
   return (
@@ -14,7 +14,7 @@ const LogoHeader = ({ isText }) => {
           priority
         />
         <span
-          className={`${isText ? "" : "hidden"} uppercase text-xl font-bold`}
+          className={`${isText ? '' : 'hidden'} uppercase text-xl font-bold`}
         >
           Центр банкротства
         </span>

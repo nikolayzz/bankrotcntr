@@ -1,6 +1,8 @@
-'use client';
-
 import { useCallback, useEffect, useRef, useState } from 'react';
+
+import { Box, Paper } from '@mui/material';
+import Image from 'next/image';
+import Carousel from 'react-material-ui-carousel';
 
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
@@ -8,48 +10,52 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const slides = [
   {
+    id: 1,
     path: '/images/logo.jpg',
   },
   {
+    id: 2,
     path: '/images/car1.jpg',
   },
   {
+    id: 3,
     path: '/images/car2.jpg',
   },
 ];
 
 const HomeCarousel = () => {
+  // return (
+  // <Carousel sx={{ border: '1px solid green' }}>
+  //   {slides.map((el) => (
+  //     <img key={el.id} src={el.path} />
+  //   ))}
+  // </Carousel>
+  // );
+  // old version without lib
   const [currentSlide, setCurrentSlide] = useState(0);
   const timerRef = useRef(null);
-
   const prevSlide = () => {
     const isFirstSlide = currentSlide === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentSlide - 1;
     setCurrentSlide(newIndex);
   };
-
   const nextSlide = useCallback(() => {
     const isLastSlide = currentSlide === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentSlide + 1;
     setCurrentSlide(newIndex);
   }, [currentSlide, slides]);
-
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
-
   useEffect(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
-
     timerRef.current = setTimeout(() => {
       nextSlide();
     }, 3000);
-
     return () => clearTimeout(timerRef.current);
   }, [nextSlide]);
-
   return (
     <div className="h-full relative group border-[#843332]/20 rounded-md">
       <div
@@ -80,8 +86,6 @@ const HomeCarousel = () => {
         ))}
       </div>
     </div>
-
-    // <div className="bg-[url('/images/logo.jpg')] h-96 bg-contain bg-no-repeat"></div>
   );
 };
 

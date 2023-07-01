@@ -1,14 +1,14 @@
-import Info from "./Info";
-import LogoHeader from "./LogoHeader";
-import Phone from "./Phone";
-import CallButton from "./CallButton";
-import NavPanel from "./NavPanel";
-import BurgerMenu from "./BurgerMenu";
+import Info from './Info';
+import LogoHeader from './LogoHeader';
+import Phone from './Phone';
+import CallButton from './CallButton';
+import NavPanel from './NavPanel';
+import BurgerMenu from './BurgerMenu';
 
 const Header = () => {
   return (
     <header className="mt-4 sm:mt-0 relative">
-      <div className="h-20 flex justify-between items-center text-[#4A0A09]">
+      <div className="h-24 flex justify-between items-center text-[#4A0A09]">
         <LogoHeader isText={true} />
         <div className="hidden lg:inline-block">
           <Info />
@@ -23,7 +23,7 @@ const Header = () => {
           <BurgerMenu />
         </div>
       </div>
-      <div className="hidden sm:inline-block">
+      <div className="hidden sm:inline-block sm:w-full">
         <NavPanel />
       </div>
     </header>

@@ -1,21 +1,21 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid } from '@mui/material';
 
 const text = [
   {
     id: 1,
-    text: "Гарантируем полное списание долга.",
+    text: 'Гарантируем полное списание долга.',
   },
   {
     id: 2,
-    text: "Бесплатно проводим анализ и оцениваем шансы.",
+    text: 'Бесплатно проводим анализ и оцениваем шансы.',
   },
   {
     id: 3,
-    text: "Фиксируем цену. Цена услуг не меняется.",
+    text: 'Фиксируем цену. Цена услуг не меняется.',
   },
   {
     id: 4,
-    text: "Даем рассрочку. Платите по этапам процедуры.",
+    text: 'Даем рассрочку. Платите по этапам процедуры.',
   },
   {
     id: 5,
@@ -23,14 +23,14 @@ const text = [
   },
   {
     id: 6,
-    text: "Сохраняем конфиденциальность.",
+    text: 'Сохраняем конфиденциальность.',
   },
 ];
 
 const HomeText = () => {
   return (
     <div>
-      <div className="text-2xl mb-7 font-bold text-center uppercase text-[#4A0A09]">
+      <div className="text-2xl mb-5 font-bold text-center uppercase text-[#4A0A09]">
         почему для списания долгов обращаются к нам
       </div>
       <div className="grid md:grid-cols-[1fr,_1fr] gap-5">

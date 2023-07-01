@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { pages } from "../Header/NavPanel";
-import Socials from "../Contacts/Socials";
-import Info from "../Header/Info";
+import Link from 'next/link';
+import { pages } from '../Header/NavPanel';
+import Socials from '../Contacts/Socials';
+import Info from '../Header/Info';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
           <h2 className="mt-5 lg:mt-0 text-center lg:text-left uppercase font-semibold text-lg mb-2">
             Навигация
           </h2>
-          <div className="flex flex-col w-48 m-auto">
+          <div className="flex flex-col w-40 lg:w-28 m-auto">
             {pages.map((el) => (
               <Link href={el.path} key={el.id} className="mr-2">
                 {el.title}
@@ -24,7 +24,7 @@ const Footer = () => {
           <h2 className="mt-5 lg:mt-0 text-center lg:text-left uppercase font-semibold mb-2">
             Социальные сети
           </h2>
-          <Socials justify={"justify-center"} />
+          <Socials justify={'justify-center'} />
         </div>
         <div>
           <h2 className="mt-5 lg:mt-0 uppercase font-semibold mb-4">
