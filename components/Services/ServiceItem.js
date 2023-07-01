@@ -6,7 +6,7 @@ const ServiceItem = ({ id, title, text, path, icon }) => {
   const [activeItem, setActiveItem] = useState(false);
   const { ref, inView, entry } = useInView({
     /* Optional options */
-    threshold: 0.5,
+    threshold: 0.3,
     triggerOnce: false,
   });
 
