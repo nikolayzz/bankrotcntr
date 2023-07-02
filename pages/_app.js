@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
-import { Montserrat, Roboto_Condensed } from 'next/font/google';
-import { Container, ThemeProvider, createTheme } from '@mui/material';
+import { Montserrat } from 'next/font/google';
+import { ThemeProvider, createTheme } from '@mui/material';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
@@ -18,26 +18,24 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#4A0A09',
+      main: '#fafafa',
     },
     secondary: {
-      main: '#843332',
+      main: '#E3E36A',
     },
   },
 });
 
 export default function App({ Component, pageProps }) {
   return (
-    // <ThemeProvider theme={theme}>
-    //   <Container className={montserrat.className}>
-    <div className="text-[#fafafa]">
-      <Header />
-      <div className="mt-10">
-        <Component {...pageProps} />
+    <ThemeProvider theme={theme}>
+      <div className={`${montserrat.className} text-[#fafafa]`}>
+        <Header />
+        <div className="mt-10">
+          <Component {...pageProps} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-    //   </Container>
-    // </ThemeProvider>
+    </ThemeProvider>
   );
 }

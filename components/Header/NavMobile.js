@@ -13,7 +13,7 @@ const NavMobile = () => {
     <div
       className={`${
         currentRoute === '/' ? 'h-screen' : ''
-      }  sm:hidden flex items-center`}
+      }  sm:hidden flex items-center px-2`}
     >
       <div
         className={`${
@@ -22,13 +22,6 @@ const NavMobile = () => {
       >
         <Link href="/">
           <div className="flex flex-col items-center">
-            <Image
-              src="/images/m-logo.png"
-              height={100}
-              width={currentRoute === '/' ? '200' : '150'}
-              alt="logo"
-              priority
-            />
             <h1 className="uppercase text-3xl font-bold mb-5">
               Центр Банкротства
             </h1>

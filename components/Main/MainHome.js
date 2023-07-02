@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import HomeTabs from './HomeTabs';
-import HomeText from './HomeText';
 import ServicesList from '../Services/ServicesList';
 import Banner from './Banner';
-import TextCarousel from './TextCarousel';
-import CallForm from './CallForm';
-import CallFormButton from './CallFormButton';
 
 const MainHome = () => {
   const [textShown, setTextShown] = useState(false);
@@ -26,29 +22,35 @@ const MainHome = () => {
       {/* баннер и услуги */}
       <div className="min-h-screen m-auto">
         <div className="max-w-7xl m-auto">
-          <div className="h-screen m-auto bg-[#fafafa]">
-            <Banner />
-            <div>
+          <div className="min-h-screen m-auto bg-[#fafafa] flex flex-col">
+            <div className="hidden sm:block">
+              <Banner />
+            </div>
+            <div className="py-10">
               <ServicesList />
             </div>
           </div>
         </div>
       </div>
       {/* миссия и текст */}
-      <div className="bg-[#4e0110] m-auto h-screen">
-        <div className="text-[#E3E36A] w-1/2 p-16 mt-16 mb-10">
-          <div className="border-l-4 border-[#E3E36A] pl-5">
-            <h2 className="uppercase text-lg md:text-xl lg:text-3xl font-semibold">
-              Наша главная цель
-            </h2>
-            <span className="text-lg md:text-xl text-white">
-              — дать возможность гражданам, которые столкнулись с финансовыми
-              проблемами, воспользоваться своим ЗАКОННЫМ ПРАВОМ списания долгов.
-            </span>
+      <div className="bg-[#4e0110] m-auto min-h-screen">
+        <div className="max-w-7xl m-auto p-10">
+          <div className="text-[#E3E36A]">
+            <div className="border-l-4 border-[#E3E36A] pl-5">
+              <h2 className="uppercase text-lg md:text-xl lg:text-3xl font-semibold">
+                Наша главная цель
+              </h2>
+              <span className="text-lg md:text-xl text-white">
+                — дать возможность гражданам, которые столкнулись с финансовыми
+                проблемами, воспользоваться своим ЗАКОННЫМ ПРАВОМ на списание
+                долгов.
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="max-w-7xl m-auto">
-          <HomeText />
+
+          {/* <div className="m-auto">
+            <HomeTabs />
+          </div> */}
         </div>
       </div>
     </>

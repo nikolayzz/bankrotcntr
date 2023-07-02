@@ -22,7 +22,7 @@ const BurgerMenu = () => {
         PaperProps={{
           sx: {
             width: '100%',
-            backgroundColor: '#843332',
+            backgroundColor: '#4e0110',
             color: '#fafafa',
             fontWeight: 'bold',
             textTransform: 'uppercase',

@@ -5,8 +5,8 @@ import Info from '../Header/Info';
 
 const Footer = () => {
   return (
-    <div className="bg-[#fafafa] mt-16 mb-5  text-[#4A0A09] min-h-60">
-      <div className="text-center lg:text-left lg:flex lg:justify-between font-semibold">
+    <div className="bg-[#fafafa] mt-16 mb-5 text-[#4A0A09] min-h-60">
+      <div className="max-w-7xl m-auto text-center lg:text-left lg:flex lg:justify-between font-semibold">
         <div>(c) 2023 Все права защищены</div>
         <div>
           <h2 className="mt-5 lg:mt-0 text-center lg:text-left uppercase font-semibold text-lg mb-2">
@@ -14,7 +14,11 @@ const Footer = () => {
           </h2>
           <div className="flex flex-col w-40 lg:w-28 m-auto">
             {pages.map((el) => (
-              <Link href={el.path} key={el.id} className="mr-2">
+              <Link
+                href={el.path}
+                key={el.id}
+                className="px-5 hover:bg-[#4A0A09] hover:text-[#fafafa] rounded-lg"
+              >
                 {el.title}
               </Link>
             ))}

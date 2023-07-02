@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CallButton from './CallButton';
 
 export const pages = [
   {
@@ -33,17 +34,20 @@ const NavPanel = () => {
 
   // old navbar without mui
   return (
-    <div className="bg-[#4E0110] h-16 lg:h-20 rounded-sm">
-      <div className="flex m-auto h-16 lg:h-20">
+    <div className="bg-[#4E0110] h-16 lg:h-20 flex ">
+      <div className="flex m-auto h-16 lg:h-20 w-4/5">
         {pages.map((el) => (
           <Link
             key={el.id}
             href={el.path}
-            className={`flex items-center justify-around mr-1 md:mr-2 lg:mr-5 px-1 md:px-2 lg:px-3 text-[#fafafa] text-lg uppercase`}
+            className="hover:underline hover:underline-offset-8 decoration-[#E3E36A] flex items-center justify-around font-body mr-1 md:mr-2 lg:mr-5 md:px-2 lg:px-3 text-[#fafafa] text-lg uppercase"
           >
             {el.title}
           </Link>
         ))}
+      </div>
+      <div className="hidden md:flex w-1/5 items-center h-full hover:animate-pulse hover:scale-105 duration-300">
+        <CallButton />
       </div>
     </div>
   );

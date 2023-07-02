@@ -28,7 +28,7 @@ const text = [
 const HomeText = () => {
   return (
     <div>
-      <div className="w-full text-[#E3E36A] text-base lg:text-xl font-bold text-center uppercase">
+      <div className="text-[#E3E36A] text-base lg:text-xl font-bold text-center uppercase">
         почему для списания долгов обращаются к нам
       </div>
       <div>

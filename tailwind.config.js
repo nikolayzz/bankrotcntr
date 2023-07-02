@@ -14,6 +14,10 @@ module.exports = {
       // },
       fontFamily: {
         body: ['Montserrat'],
+        lato: ['Lato'],
+        firaSans: ['Fira Sans'],
+        nunito: ['Nunito'],
+        roboto: ['Roboto'],
       },
     },
   },
