@@ -81,6 +81,7 @@ const tabStyles = {
   },
   fontWeight: 'bold',
   fontFamily: "'Montserrat', sans-serif",
+  color: '#fafafa',
 };
 
 const HomeTabs = () => {
@@ -104,7 +105,7 @@ const HomeTabs = () => {
           </TabList>
         </Box>
 
-        <TabPanel value="1" color="primary">
+        <TabPanel value="1">
           <Box sx={{ mt: 2 }}>
             <Grid
               container

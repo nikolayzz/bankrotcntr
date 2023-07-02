@@ -42,7 +42,6 @@ const ServicesList = ({ title }) => {
   useEffect(() => {
     if (inView) {
       setShown(true);
-      console.log('Работает!');
     }
   }, [inView]);
 

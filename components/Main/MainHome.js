@@ -22,38 +22,82 @@ const MainHome = () => {
   }, [inView]);
 
   return (
-    <div>
-      <div className="hidden m-auto md:flex items-center">
-        <Banner />
+    <>
+      {/* баннер и услуги */}
+      <div className="min-h-screen m-auto">
+        <div className="max-w-7xl m-auto">
+          <div className="h-screen m-auto bg-[#fafafa]">
+            <Banner />
+            <div>
+              <ServicesList />
+            </div>
+          </div>
+        </div>
       </div>
+      {/* миссия и текст */}
+      <div className="bg-[#4e0110] m-auto h-screen">
+        <div className="text-[#E3E36A] w-1/2 p-16 mt-16 mb-10">
+          <div className="border-l-4 border-[#E3E36A] pl-5">
+            <h2 className="uppercase text-lg md:text-xl lg:text-3xl font-semibold">
+              Наша главная цель
+            </h2>
+            <span className="text-lg md:text-xl text-white">
+              — дать возможность гражданам, которые столкнулись с финансовыми
+              проблемами, воспользоваться своим ЗАКОННЫМ ПРАВОМ списания долгов.
+            </span>
+          </div>
+        </div>
+        <div className="max-w-7xl m-auto">
+          <HomeText />
+        </div>
+      </div>
+    </>
 
-      <TextCarousel />
-      <div className="sm:my-16">
-        <ServicesList title={'Услуги'} />
-      </div>
-      <div
-        ref={ref}
-        className={`${
-          textShown
-            ? 'opacity-100 transition-all translate-x-0 ease-in-out duration-1000'
-            : 'opacity-0 translate-y-32'
-        }  my-16 grid md:grid-cols-[3fr,_1fr] gap-2`}
-      >
-        <HomeText />
-        <CallForm
-          style={`bg-[#843332] max-w-xs m-auto text-white rounded-md p-7 text-center shadow-2xl`}
-          button={
-            <CallFormButton
-              styles={`bg-white text-[#4A0A09] h-12 w-48 rounded-xl mt-4 mb-3 font-semibold hover:bg-[#E2D2D2]`}
-            />
-          }
-        />
-      </div>
+    // <div>
+    //   <div className="hidden m-auto md:flex items-center">
+    //     <Banner />
+    //   </div>
+    //   <div className="mt-2 mb-14">
+    //     <TextCarousel />
+    //   </div>
+    //   <div className="">
+    //     <ServicesList title={'Услуги'} />
+    //   </div>
+    //   <div className="bg-[#4E0110] text-[#E3E36A] rounded-md p-16 mt-16 mb-10">
+    //     <div className="border-l-4 border-[#E3E36A] pl-5">
+    //       <h2 className="uppercase text-lg md:text-xl lg:text-3xl font-semibold">
+    //         Наша главная цель
+    //       </h2>
+    //       <span className="text-lg md:text-xl text-white">
+    //         — дать возможность гражданам, которые столкнулись с финансовыми
+    //         проблемами, воспользоваться своим ЗАКОННЫМ ПРАВОМ списания долгов.
+    //       </span>
+    //     </div>
+    //   </div>
 
-      <div>
-        <HomeTabs />
-      </div>
-    </div>
+    //   <div
+    //     ref={ref}
+    //     className={`${
+    //       textShown
+    //         ? 'opacity-100 transition-all translate-x-0 ease-in-out duration-1000'
+    //         : 'opacity-0 translate-y-32'
+    //     }  my-16 grid md:grid-cols-[3fr,_1fr] gap-2`}
+    //   >
+    //     <HomeText />
+    //     <CallForm
+    //       style={`bg-[#843332] max-w-xs m-auto text-white rounded-md p-7 text-center shadow-2xl`}
+    //       button={
+    //         <CallFormButton
+    //           styles={`bg-white text-[#4A0A09] h-12 w-48 rounded-xl mt-4 mb-3 font-semibold hover:bg-[#E2D2D2]`}
+    //         />
+    //       }
+    //     />
+    //   </div>
+
+    //   <div>
+    //     <HomeTabs />
+    //   </div>
+    // </div>
   );
 };
 

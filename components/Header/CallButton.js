@@ -22,7 +22,7 @@ const CallButton = () => {
     <div>
       <button
         onClick={handleClickOpen}
-        className="bg-[#843332] text-white uppercase font-bold py-2 px-4 rounded-md"
+        className="bg-[#4E0110] text-[#fafafa] uppercase font-bold py-2 px-4 rounded-md"
       >
         Перезвоните мне
       </button>

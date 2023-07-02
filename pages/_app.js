@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Roboto_Condensed } from 'next/font/google';
 import { Container, ThemeProvider, createTheme } from '@mui/material';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
@@ -11,7 +11,10 @@ const montserrat = Montserrat({
 
 const theme = createTheme({
   typography: {
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: [
+      "'Montserrat', sans-serif",
+      "'Roboto Condensed', sans-serif",
+    ].join(','),
   },
   palette: {
     primary: {
@@ -25,16 +28,16 @@ const theme = createTheme({
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
-      <Container className={montserrat.className}>
-        <div className="text-[#4A0A09]">
-          <Header />
-          <div className="mt-10">
-            <Component {...pageProps} />
-          </div>
-          <Footer />
-        </div>
-      </Container>
-    </ThemeProvider>
+    // <ThemeProvider theme={theme}>
+    //   <Container className={montserrat.className}>
+    <div className="text-[#fafafa]">
+      <Header />
+      <div className="mt-10">
+        <Component {...pageProps} />
+      </div>
+      <Footer />
+    </div>
+    //   </Container>
+    // </ThemeProvider>
   );
 }

@@ -1,5 +1,3 @@
-import { Box, Grid } from '@mui/material';
-
 const text = [
   {
     id: 1,
@@ -29,15 +27,15 @@ const text = [
 
 const HomeText = () => {
   return (
-    <div className="bg-[#843332] text-white p-7 rounded-md shadow-2xl">
-      <div className="text-base lg:text-xl font-bold text-center uppercase text-white">
+    <div>
+      <div className="w-full text-[#E3E36A] text-base lg:text-xl font-bold text-center uppercase">
         почему для списания долгов обращаются к нам
       </div>
-      <div className="grid md:grid-cols-[1fr,_1fr] gap-5 sm:h-full pt-14">
+      <div>
         {text.map((el) => (
           <div
             key={el.id}
-            className="sm:text-lg sm:font-semibold lg:text-xl text-center md:text-left"
+            className="sm:text-lg lg:text-xl text-center md:text-left"
           >
             {el.text}
           </div>

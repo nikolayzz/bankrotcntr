@@ -1,19 +1,4 @@
-'use client';
-
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import styles from '../../styles/NavPanel.module.css';
-import {
-  AppBar,
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from '@mui/material';
 
 export const pages = [
   {
@@ -44,20 +29,17 @@ export const pages = [
 ];
 
 const NavPanel = () => {
-  const router = useRouter();
-  const currentRoute = router.pathname;
+  // old color #843332
 
   // old navbar without mui
   return (
-    <div className="bg-[#843332] h-16 lg:h-20 shadow-lg rounded-sm">
-      <div className="flex justify-center m-auto h-16 lg:h-20">
+    <div className="bg-[#4E0110] h-16 lg:h-20 rounded-sm">
+      <div className="flex m-auto h-16 lg:h-20">
         {pages.map((el) => (
           <Link
             key={el.id}
             href={el.path}
-            className={`${
-              currentRoute === el.path ? styles.active : styles.nonActive
-            } flex items-center justify-around mr-1 md:mr-2 lg:mr-5 px-1 md:px-2 lg:px-8 font-bold text-white text-lg uppercase`}
+            className={`flex items-center justify-around mr-1 md:mr-2 lg:mr-5 px-1 md:px-2 lg:px-3 text-[#fafafa] text-lg uppercase`}
           >
             {el.title}
           </Link>
