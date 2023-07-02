@@ -60,7 +60,7 @@ const BurgerMenu = () => {
             {pages.map((el) => (
               <div key={el.id}>
                 <ListItem sx={{ paddingBottom: '30px' }}>
-                  <Link className="w-full text-3xl" href={el.path}>
+                  <Link className="w-full text-2xl" href={el.path}>
                     {el.title}
                   </Link>
                 </ListItem>

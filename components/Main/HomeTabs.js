@@ -73,6 +73,16 @@ const tabThree = [
   },
 ];
 
+const tabStyles = {
+  fontSize: {
+    xs: '14px',
+    sm: '18px',
+    md: '24px',
+  },
+  fontWeight: 'bold',
+  fontFamily: "'Montserrat', sans-serif",
+};
+
 const HomeTabs = () => {
   const [tabsValue, setTabsValue] = useState('1');
   const handleChange = (event, newValue) => {
@@ -84,27 +94,10 @@ const HomeTabs = () => {
       <TabContext value={tabsValue}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <TabList onChange={handleChange} variant="fullWidth">
+            <Tab sx={tabStyles} label="Преимущества работы с нами" value="1" />
+            <Tab sx={tabStyles} label="Финансовые выгоды" value="2" />
             <Tab
-              sx={{
-                fontSize: '12px',
-                fontWeight: 'bold',
-              }}
-              label="Преимущества работы с нами"
-              value="1"
-            />
-            <Tab
-              sx={{
-                fontSize: '12px',
-                fontWeight: 'bold',
-              }}
-              label="Финансовые выгоды"
-              value="2"
-            />
-            <Tab
-              sx={{
-                fontSize: '12px',
-                fontWeight: 'bold',
-              }}
+              sx={tabStyles}
               label="Что будет, если не списать долг?"
               value="3"
             />

@@ -29,50 +29,21 @@ const text = [
 
 const HomeText = () => {
   return (
-    <div>
-      <div className="text-2xl mb-5 font-bold text-center uppercase text-[#4A0A09]">
+    <div className="bg-[#843332] text-white p-7 rounded-md shadow-2xl">
+      <div className="text-base lg:text-xl font-bold text-center uppercase text-white">
         почему для списания долгов обращаются к нам
       </div>
-      <div className="grid md:grid-cols-[1fr,_1fr] gap-5">
+      <div className="grid md:grid-cols-[1fr,_1fr] gap-5 sm:h-full pt-14">
         {text.map((el) => (
-          <div key={el.id} className="text-xl text-center md:text-left">
+          <div
+            key={el.id}
+            className="sm:text-lg sm:font-semibold lg:text-xl text-center md:text-left"
+          >
             {el.text}
           </div>
         ))}
       </div>
     </div>
-
-    // <Box>
-    //   <div className="text-2xl mb-7 font-bold text-center uppercase text-[#4A0A09]">
-    //     почему для списания долгов обращаются к нам
-    //   </div>
-    //   <Grid
-    //     container
-    //     justifyContent="center"
-    //     spacing={2}
-    //     columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-    //     sx={{ fontSize: "1.3rem" }}
-    //   >
-    //     <Grid item xs={6}>
-    //       Гарантируем полное списание долга
-    //     </Grid>
-    //     <Grid item xs={6}>
-    //       Бесплатно проводим анализ и оцениваем шансы
-    //     </Grid>
-    //     <Grid item xs={6}>
-    //       Фиксируем цену. Цена услуг не меняется
-    //     </Grid>
-    //     <Grid item xs={6}>
-    //       Даем рассрочку. Платите по этапам процедуры
-    //     </Grid>
-    //     <Grid item xs={6}>
-    //       Делаем всю работу "под ключ"
-    //     </Grid>
-    //     <Grid item xs={6}>
-    //       Сохраняем конфиденциальность
-    //     </Grid>
-    //   </Grid>
-    // </Box>
   );
 };
 

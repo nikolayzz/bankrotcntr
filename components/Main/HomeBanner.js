@@ -5,10 +5,6 @@ import CallFormButton from './CallFormButton';
 const HomeBanner = () => {
   return (
     <div>
-      <h1 className="text-xl text-center mb-10 font-semibold">
-        Банкротство физических и юридических лиц в любом городе России с
-        гарантией результата
-      </h1>
       <div className="lg:grid lg:grid-cols-[3fr_1fr] lg:gap-8">
         <div className="h-64 mb-16 md:h-80 lg:min-h-full">
           <HomeCarousel />

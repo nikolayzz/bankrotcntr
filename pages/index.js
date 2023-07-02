@@ -1,7 +1,11 @@
-import MainHome from "@/components/Main/MainHome";
-import Head from "next/head";
+import MainHome from '@/components/Main/MainHome';
+import Head from 'next/head';
+import { useEffect } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    document.body.style.opacity = '1';
+  }, []);
   return (
     <>
       <Head>
