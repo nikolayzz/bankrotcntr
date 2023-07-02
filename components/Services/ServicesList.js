@@ -36,7 +36,7 @@ const ServicesList = ({ title }) => {
   const [shown, setShown] = useState(false);
   const { ref, inView, entry } = useInView({
     /* Optional options */
-    threshold: 0.2,
+    threshold: 0.1,
   });
 
   useEffect(() => {
