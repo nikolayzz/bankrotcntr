@@ -4,11 +4,12 @@ import Phone from './Phone';
 import CallButton from './CallButton';
 import NavPanel from './NavPanel';
 import BurgerMenu from './BurgerMenu';
-import Image from 'next/image';
+import NavMobile from './NavMobile';
 
 const Header = () => {
   return (
     <header className="w-full relative">
+      {/* header desktop */}
       <div className="hidden sm:block">
         <div className="h-24 flex justify-between items-center text-[#4A0A09]">
           <LogoHeader isText={true} />
@@ -29,24 +30,8 @@ const Header = () => {
           <NavPanel />
         </div>
       </div>
-      <div className="h-screen sm:hidden flex items-center">
-        <div className="flex m-auto flex-col items-center justify-center text-center">
-          <Image
-            src="/images/m-logo.png"
-            height={200}
-            width={200}
-            alt="logo"
-            priority
-          />
-          <h1 className="uppercase text-3xl font-bold mb-5">
-            Центр Банкротства
-          </h1>
-          <div className="mb-5">
-            <Info />
-          </div>
-          <Phone />
-        </div>
-      </div>
+      {/* header mobile for home page */}
+      <NavMobile />
     </header>
   );
 };

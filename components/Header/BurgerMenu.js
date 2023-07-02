@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Box, Divider, List, ListItem, SwipeableDrawer } from '@mui/material';
 import { pages } from '../Header/NavPanel';
+import NavMobile from './NavMobile';
 
 const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,7 @@ const BurgerMenu = () => {
               alt="logo"
               priority
             />
+
             <div
               className="absolute top-9 right-5"
               onClick={() => toggleDrawer(false)}
