@@ -29,8 +29,8 @@ const Header = () => {
           <NavPanel />
         </div>
       </div>
-      <div className="sm:hidden h-screen flex items-center">
-        <div className="h-1/2 flex flex-col items-center justify-center text-center">
+      <div className="h-screen sm:hidden flex items-center">
+        <div className="flex m-auto flex-col items-center justify-center text-center">
           <Image
             src="/images/m-logo.png"
             height={200}

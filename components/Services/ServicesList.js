@@ -42,24 +42,26 @@ const ServicesList = ({ title }) => {
   useEffect(() => {
     if (inView) {
       setShown(true);
+      console.log('Работает!');
     }
   }, [inView]);
 
   return (
-    <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      ref={ref}
+      className={`${
+        shown
+          ? 'opacity-100 transition-all translate-x-0 ease-in-out duration-1000'
+          : 'opacity-0 translate-y-32'
+      }  sm:grid sm:grid-cols-2 lg:grid-cols-3`}
+    >
       {serviceList.map((el) => (
-        <Link href={el.path}>
+        <Link key={el.id} href={el.path}>
           <div
-            ref={ref}
-            key={el.id}
             style={{
               backgroundImage: `url(${el.img})`,
             }}
-            className={`${
-              shown
-                ? 'opacity-100 transition-all translate-x-0 ease-in-out duration-1000'
-                : 'opacity-0 translate-y-32'
-            } h-72 m-1 text-white bg-cover shadow-2xl hover:scale-105 ease-in-out duration-700`}
+            className={`h-72 m-1 border text-white bg-cover shadow-2xl hover:scale-105 ease-in-out duration-700`}
           >
             <div className="w-full h-1/3 flex items-center p-10 bg-[#843332]/[0.5]">
               <h2 className="text-xl">{el.title}</h2>

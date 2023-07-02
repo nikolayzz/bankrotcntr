@@ -28,7 +28,7 @@ const MainHome = () => {
       </div>
 
       <TextCarousel />
-      <div className="my-16">
+      <div className="sm:my-16">
         <ServicesList title={'Услуги'} />
       </div>
       <div
