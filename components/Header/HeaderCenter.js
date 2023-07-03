@@ -3,7 +3,7 @@ import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 const HeaderCenter = () => {
   return (
     <>
-      <div>
+      <div className="font-geometria">
         <h1 className="text-8xl pt-10 font-body animate-fade-left animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out">
           Центр Банкротства
         </h1>

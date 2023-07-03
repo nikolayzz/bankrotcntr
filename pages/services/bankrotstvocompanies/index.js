@@ -1,7 +1,7 @@
 const BankrotstvoCompanies = () => {
   return (
     <div className="text-[#4A0A09]">
-      <div className="max-w-7xl m-auto ">
+      <div className="max-w-7xl m-auto p-2">
         <h1 className="font-bold text-2xl text-center mb-5 ">
           Банкротство юридических лиц
         </h1>

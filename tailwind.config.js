@@ -18,6 +18,7 @@ module.exports = {
         firaSans: ['Fira Sans'],
         nunito: ['Nunito'],
         roboto: ['Roboto'],
+        geometria: ['Geometria'],
       },
     },
   },
