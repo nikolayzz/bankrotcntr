@@ -32,7 +32,7 @@ const NavMobile = () => {
             >
               <h1
                 className={`${
-                  currentRoute === '/' ? 'mt-20 text-4xl ' : 'py-9 text-left'
+                  currentRoute === '/' ? 'mt-20 text-4xl ' : 'py-9'
                 } uppercase text-center font-bold`}
               >
                 Центр Банкротства

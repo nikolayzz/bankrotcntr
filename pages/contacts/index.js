@@ -3,7 +3,7 @@ import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 
 const Contacts = () => {
   return (
-    <div className="text-[#4e0110]">
+    <div className="text-[#4e0110] p-2">
       <div className="max-w-7xl m-auto">
         <h1 className=" font-bold text-3xl text-center">Контакты</h1>
         <div className="my-5">
