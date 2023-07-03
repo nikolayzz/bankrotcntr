@@ -36,7 +36,7 @@ const Contacts = () => {
           <div className="my-5">
             <h3 className="font-semibold text-xl mb-1">Социальные сети:</h3>
             <div>
-              <Socials />
+              <Socials fill={'#4A0A09'} />
             </div>
           </div>
           <div className="my-5">

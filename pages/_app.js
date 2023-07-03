@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google';
 import { ThemeProvider, createTheme } from '@mui/material';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import { createContext } from 'react';
 
 const montserrat = Montserrat({
   weight: '400',

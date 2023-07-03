@@ -1,5 +1,11 @@
 const CallFormButton = ({ styles }) => {
-  return <button className={styles}>Отправить</button>;
+  const alertWindow = () => alert('Свяжемся с Вами в ближайшее время!');
+
+  return (
+    <button onClick={alertWindow} className={styles}>
+      Отправить
+    </button>
+  );
 };
 
 export default CallFormButton;

@@ -28,7 +28,7 @@ const Footer = () => {
           <h2 className="mt-5 lg:mt-0 text-center lg:text-left uppercase font-semibold mb-2">
             Социальные сети
           </h2>
-          <Socials justify={'justify-center'} />
+          <Socials justify={'justify-center'} fill={'#4A0A09'} />
         </div>
         <div>
           <h2 className="mt-5 lg:mt-0 uppercase font-semibold mb-4">

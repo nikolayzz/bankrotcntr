@@ -3,14 +3,14 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 
 const Case = ({ number, link }) => {
   return (
-    <Link href={link} target="_blank">
-      <div className="bg-[#4E0110] flex items-center w-60 h-14 p-2 m-auto text-[#fafafa] text-lg font-semibold shadow-md rounded-sm">
+    <div className="bg-[#4E0110] my-4 sm:my-0 flex items-center w-60 h-14 p-2 m-auto text-[#fafafa] text-lg font-semibold shadow-md rounded-sm">
+      <Link href={link} target="_blank" className="flex items-center">
         <div className="mr-3">
           <WorkOutlineOutlinedIcon />
         </div>
         <div>{number}</div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

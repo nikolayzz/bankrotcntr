@@ -40,27 +40,27 @@ const igIcon = (
   </svg>
 );
 
-const Socials = ({ justify }) => {
+const Socials = ({ justify, fill }) => {
   return (
     <div className={`${justify} flex `}>
       <Link
         href="https://vk.com/bankrot_cntr"
         target="_blank"
-        className="fill-[#4A0A09] px-2"
+        className={`fill-[${fill}] px-2`}
       >
         {vkIcon}
       </Link>
       <Link
         href="https://t.me/bankrot_cntr"
         target="_blank"
-        className="fill-[#4A0A09] px-2"
+        className={`fill-[${fill}] px-2`}
       >
         {tgIcon}
       </Link>
       <Link
         href="https://www.instagram.com/bankrot_cntr"
         target="_blank"
-        className="fill-[#4A0A09] px-2"
+        className={`fill-[${fill}] px-2`}
       >
         {igIcon}
       </Link>

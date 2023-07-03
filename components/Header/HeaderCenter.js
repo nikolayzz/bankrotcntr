@@ -4,12 +4,14 @@ const HeaderCenter = () => {
   return (
     <>
       <div>
-        <h1 className="text-8xl pt-10 font-body">Центр Банкротства</h1>
-        <h3 className="text-3xl my-10 uppercase">
+        <h1 className="text-8xl pt-10 font-body animate-fade-left animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out">
+          Центр Банкротства
+        </h1>
+        <h2 className="text-3xl my-10 uppercase animate-fade-right animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out">
           Федеральная юридическая компания
-        </h3>
+        </h2>
         <div className="ml-96 pt-16">
-          <h2 className="text-3xl uppercase ">
+          <h2 className="text-3xl uppercase animate-fade-up animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out">
             БАНКРОТСТВО ФИЗИЧЕСКИХ И ЮРИДИЧЕСКИХ ЛИЦ В ЛЮБОМ ГОРОДЕ С ГАРАНТИЕЙ
             РЕЗУЛЬТАТА
           </h2>

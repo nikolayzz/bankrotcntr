@@ -1,29 +1,14 @@
-import { useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import HomeTabs from './HomeTabs';
 import ServicesList from '../Services/ServicesList';
 import Banner from './Banner';
 
 const MainHome = () => {
-  const [textShown, setTextShown] = useState(false);
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: 0.2,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      setTextShown(true);
-    }
-  }, [inView]);
-
   return (
     <>
       {/* баннер и услуги */}
       <div className="min-h-screen m-auto">
         <div className="max-w-7xl m-auto">
           <div className="min-h-screen m-auto bg-[#fafafa] flex flex-col">
-            <div className="hidden sm:block">
+            <div className="hidden sm:block ">
               <Banner />
             </div>
             <div className="py-10">
@@ -47,10 +32,6 @@ const MainHome = () => {
               </span>
             </div>
           </div>
-
-          {/* <div className="m-auto">
-            <HomeTabs />
-          </div> */}
         </div>
       </div>
     </>

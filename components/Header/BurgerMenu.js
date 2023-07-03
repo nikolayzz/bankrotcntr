@@ -5,7 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Box, Divider, List, ListItem, SwipeableDrawer } from '@mui/material';
 import { pages } from '../Header/NavPanel';
-import NavMobile from './NavMobile';
+import Socials from '../Contacts/Socials';
 
 const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
@@ -45,12 +45,11 @@ const BurgerMenu = () => {
             />
 
             <div
-              className="absolute top-9 right-5"
+              className="text-[#4e0110] absolute top-9 right-4"
               onClick={() => toggleDrawer(false)}
             >
               <CloseIcon
                 fontSize="large"
-                color="primary"
                 viewBox="0 0 20 20"
                 // sx={{ position: 'absolute', top: '35px', right: '20px' }}
               />
@@ -62,7 +61,7 @@ const BurgerMenu = () => {
             {pages.map((el) => (
               <div key={el.id}>
                 <ListItem sx={{ paddingBottom: '30px' }}>
-                  <Link className="w-full text-2xl" href={el.path}>
+                  <Link className="w-full text-xl text-center" href={el.path}>
                     {el.title}
                   </Link>
                 </ListItem>
@@ -70,6 +69,10 @@ const BurgerMenu = () => {
               </div>
             ))}
           </List>
+
+          <div className="bg-[#fafafa] h-28 flex justify-center items-center absolute bottom-0 right-0 left-0 ">
+            <Socials fill={'#4A0A09'} />
+          </div>
         </Box>
       </SwipeableDrawer>
     </>

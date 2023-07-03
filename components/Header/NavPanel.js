@@ -30,11 +30,8 @@ export const pages = [
 ];
 
 const NavPanel = () => {
-  // old color #843332
-
-  // old navbar without mui
   return (
-    <div className="bg-[#4E0110] h-16 lg:h-20 flex ">
+    <div className="bg-[#4E0110] h-16 lg:h-20 flex animate-fade-right animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out">
       <div className="flex m-auto h-16 lg:h-20 w-4/5">
         {pages.map((el) => (
           <Link

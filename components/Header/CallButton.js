@@ -1,10 +1,4 @@
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from '@mui/material';
+import { Dialog, DialogActions, DialogContent } from '@mui/material';
 import CallForm from '../Main/CallForm';
 import CallFormButton from '../Main/CallFormButton';
 import { useState } from 'react';
@@ -22,7 +16,7 @@ const CallButton = () => {
     <div>
       <button
         onClick={handleClickOpen}
-        className="bg-[#4E0110] text-[#fafafa] uppercase text-lg py-2 px-4 rounded-md"
+        className=" text-[#fafafa] uppercase text-lg py-2 px-4"
       >
         Перезвоните мне
       </button>
@@ -31,7 +25,7 @@ const CallButton = () => {
         onClose={handleClose}
         sx={{
           '& .MuiPaper-root': {
-            background: '#843332',
+            background: '#4e0110',
             color: 'white',
           },
         }}
@@ -42,18 +36,20 @@ const CallButton = () => {
             Запишитесь на консультацию
           </DialogContentText> */}
           <CallForm
-            style={`bg-[#843332] max-w-xs m-auto text-white rounded-3xl p-7 text-center`}
+            style={`bg-[#4e0110] h-68 max-w-xs m-auto text-white p-7 text-center`}
           />
         </DialogContent>
-        <DialogActions sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
+        <DialogActions
+          sx={{ display: 'flex', justifyContent: 'space-evenly', mb: '20px' }}
+        >
           <button
-            className="bg-white text-[#4A0A09] h-8 p-5 rounded-2xl flex justify-center items-center font-semibold w-28"
+            className="bg-white text-[#4A0A09] h-8 p-5 rounded-md flex justify-center items-center font-semibold w-28"
             onClick={handleClose}
           >
             Отмена
           </button>
           <button
-            className="bg-white text-[#4A0A09] h-8 p-5 rounded-2xl flex justify-center items-center font-semibold w-32"
+            className="bg-white text-[#4A0A09] h-8 p-5 rounded-md flex justify-center items-center font-semibold w-32"
             onClick={handleClose}
           >
             <CallFormButton />
