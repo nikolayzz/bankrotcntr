@@ -43,9 +43,9 @@ const Header = () => {
         scrollDirection === "down" ? "-top-24" : "top-0"
       } h-24 bg-dots-red transition-all duration-500`}
     >
-      <nav className="max-w-7xl m-auto flex items-center h-full relative">
+      <nav className="max-w-7xl m-auto flex items-center h-full relative lg:p-2">
         <div className="w-full flex justify-between items-center">
-          <div className="flex items-center">
+          <div className="flex justify-between items-center m-auto lg:block lg:m-0">
             <Link href="/">
               <h1 className="text-center md:text-left text-2xl uppercase ">
                 Центр Банкротства

@@ -8,7 +8,7 @@ const MainHome = () => {
     // стартовый экран
     <div>
       <section className="bg-dots-red text-[#fafafa] m-auto">
-        <div className="max-w-7xl m-auto p-2 lg:p-0">
+        <div className="max-w-7xl m-auto p-2">
           <div className=" lg:flex lg:items-center m-auto">
             <div className="lg:w-1/2 h-full">
               <h1 className="text-2xl sm:text-3xl md:text-5xl animated-text">
@@ -18,14 +18,19 @@ const MainHome = () => {
             </div>
 
             <div className=" lg:w-1/2  flex justify-center">
-              <Image src="/images/backgr-5.svg" width={500} height={500} />
+              <Image
+                src="/images/home-logo.svg"
+                width={500}
+                height={500}
+                alt="home-logo"
+              />
             </div>
           </div>
         </div>
       </section>
 
       <section className="text-[#4e0110]  pt-5 m-auto">
-        <div className="max-w-7xl m-auto py-5 p-2 lg:p-0">
+        <div className="max-w-7xl m-auto py-5 p-2 ">
           <h1 className="text-2xl md:text-4xl animated-text">
             Что дает банкротство гражданина?
           </h1>
@@ -37,6 +42,7 @@ const MainHome = () => {
                 width={500}
                 height={500}
                 className="rounded-sm pt-5"
+                alt="question"
               />
             </div>
             <div className="lg:w-2/3 lg:pl-10">
@@ -85,7 +91,7 @@ const MainHome = () => {
 
       {/* баннер и услуги */}
       <section className="bg-dots-red  m-auto">
-        <div className="max-w-7xl m-auto p-2 lg:p-0">
+        <div className="max-w-7xl m-auto p-2 ">
           <div className="m-auto flex flex-col pt-3">
             <div className="lg:flex items-center">
               <div className="lg:w-1/2 ">
@@ -113,6 +119,7 @@ const MainHome = () => {
                   src="/images/book-and-hammer.svg"
                   width={500}
                   height={500}
+                  alt="book-and-hammer"
                 />
               </div>
             </div>
@@ -156,19 +163,20 @@ const MainHome = () => {
 
       <section id="consult" className="m-auto text-[#4e0110]">
         <div className="max-w-7xl m-auto p-10 ">
-          <div className="border-4 rounded-3xl border-[#4e0110]/[0.6] bg-lines lg:p-10 lg:h-[600px] relative">
+          <div className="border-4 rounded-3xl border-[#4e0110]/[0.6] bg-lines lg:p-10 lg:min-h-[600px] md:w-[700px] lg:w-[1000px] m-auto relative">
             <div className="absolute left-1/2 lg:top-1/2 lg:left-0 -translate-y-1/2 -translate-x-1/2 border-4 border-[#4e0110]/[0.6] rounded-full h-52 w-52">
               <Image
                 src="/images/chat.svg"
                 width={250}
                 height={250}
                 className="rounded-full"
+                alt="chat"
               />
             </div>
-            <h1 className="text-2xl text-center lg:text-left md:text-4xl animated-text pl-2 pt-28 lg:pt-0 lg:pl-44 my-3">
+            <h1 className="text-2xl text-center lg:text-left md:text-4xl animated-text pl-2 pt-28 lg:pt-0 lg:pl-24 xl:px-44 my-3">
               Бесплатная юридическая консультация по банкротству
             </h1>
-            <form className="flex flex-col lg:pl-44 lg:pr-28 p-2">
+            <form className="flex flex-col lg:pl-24 xl:px-44 lg:pr-24 p-2">
               <input
                 placeholder="Ваше имя"
                 className="border rounded-md my-3 p-3"
@@ -185,13 +193,15 @@ const MainHome = () => {
                 placeholder="Ваше e-mail"
                 className="border rounded-md my-3 p-3"
               />
-              <button
-                onClick={(event) => event.preventDefault()}
-                type="submit"
-                className="border rounded-md w-48 bg-[#4e0110] m-auto lg:m-0 text-[#fafafa] p-2"
-              >
-                Отправить
-              </button>
+              <div className="flex items-center justify-center">
+                <button
+                  onClick={(event) => event.preventDefault()}
+                  type="submit"
+                  className="border  rounded-md w-48 bg-[#4e0110] m-auto lg:m-0 text-[#fafafa] p-2"
+                >
+                  Отправить
+                </button>
+              </div>
             </form>
           </div>
         </div>
