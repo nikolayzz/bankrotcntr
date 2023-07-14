@@ -1,14 +1,23 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const textSlides = [
   {
     id: 1,
-    title:
-      'БАНКРОТСТВО ФИЗИЧЕСКИХ И ЮРИДИЧЕСКИХ ЛИЦ В ЛЮБОМ ГОРОДЕ РОССИИ С ГАРАНТИЕЙ РЕЗУЛЬТАТА',
+    title: 'Помогаем избавиться от долгов',
   },
+  // {
+  //   id: 2,
+  //   title:
+  //     'Банкротство физических и юридических лиц в любом городе с гарантией результата',
+  // },
+  // {
+  //   id: 3,
+  //   title: `Процедура банкротства — единственный законный способ избавиться от долгов`,
+  // },
   {
-    id: 2,
-    title: `Процедура банкротства — единственный законный способ избавиться от долгов`,
+    id: 4,
+    title: 'Центр Банкротства',
   },
 ];
 
@@ -29,17 +38,17 @@ const TextCarousel = () => {
     }
     timerRef.current = setTimeout(() => {
       nextSlide();
-    }, 5000);
+    }, 4000);
     return () => clearTimeout(timerRef.current);
   }, [nextSlide]);
 
   return (
-    <div className="flex items-center rounded-sm p-10 bg-[#4E0110] text-[#fafafa]">
-      <h2 className="h-24 pt-6 uppercase text-lg md:text-xl lg:text-3xl text-center mb-10 font-semibold">
-        {textSlides[currentSlide].title}
-      </h2>
+    <div className="flex items-center text-[#fafafa] h-96 text-2xl md:text-8xl pt-10 font-body ">
+      {textSlides[currentSlide].title}
     </div>
   );
 };
 
 export default TextCarousel;
+
+// animate-fade-left animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out

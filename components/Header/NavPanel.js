@@ -29,22 +29,32 @@ export const pages = [
   },
 ];
 
-const NavPanel = () => {
+const NavPanel = ({ navbar, activeColor, nonActiveColor }) => {
   return (
-    <div className=" bg-[#4E0110] h-16 lg:h-20 flex animate-fade-right animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out">
-      <div className="flex m-auto h-16 lg:h-20 w-4/5">
+    <div
+      className={`${
+        navbar ? activeColor : nonActiveColor
+      } h-10 lg:h-14 flex animate-fade-right animate-once animate-duration-[2500ms] animate-delay-100 animate-ease-out`}
+    >
+      <div className="flex m-auto w-4/5">
         {pages.map((el) => (
           <Link
             key={el.id}
             href={el.path}
-            className=" hover:underline hover:underline-offset-8 decoration-[#E3E36A] flex items-center justify-around font-body mr-1 md:mr-2 lg:mr-5 md:px-2 lg:px-3 text-[#fafafa] text-lg uppercase"
+            className={`${
+              navbar ? 'text-[#4e0110]' : 'text-[#fafafa]'
+            } hover:underline hover:underline-offset-8 decoration-[#E3E36A] flex items-center justify-around font-body mr-1 md:mr-2 lg:mr-5 md:px-2 lg:px-3  text-lg uppercase`}
           >
             {el.title}
           </Link>
         ))}
       </div>
       <div className="hidden md:flex w-1/5 items-center h-full animate-pulse hover:scale-105 duration-300">
-        <CallButton />
+        <CallButton
+          navbar={navbar}
+          activeColor={activeColor}
+          nonActiveColor={nonActiveColor}
+        />
       </div>
     </div>
   );

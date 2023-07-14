@@ -1,9 +1,14 @@
-import Socials from '@/components/Contacts/Socials';
-import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
+import Socials from "@/components/Contacts/Socials";
+import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
+import { motion } from "framer-motion";
+import Head from "next/head";
 
 const Contacts = () => {
   return (
-    <div className="text-[#4e0110] p-2">
+    <motion.div className="bg-dots-red p-2">
+      <Head>
+        <title>Контакты</title>
+      </Head>
       <div className="max-w-7xl m-auto">
         <h1 className=" font-bold text-3xl text-center">Контакты</h1>
         <div className="my-5">
@@ -21,7 +26,7 @@ const Contacts = () => {
           <YMaps>
             <div>
               <Map
-                width={'100%'}
+                width={"100%"}
                 defaultState={{ center: [46.310264, 44.264486], zoom: 17 }}
               >
                 <Placemark geometry={[46.310264, 44.264486]} />
@@ -36,7 +41,7 @@ const Contacts = () => {
           <div className="my-5">
             <h3 className="font-semibold text-xl mb-1">Социальные сети:</h3>
             <div>
-              <Socials fill={'#4A0A09'} />
+              <Socials fill="white" />
             </div>
           </div>
           <div className="my-5">
@@ -45,7 +50,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

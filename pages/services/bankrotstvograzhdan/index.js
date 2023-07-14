@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 const BankrotstvoGrazhdan = () => {
   return (
-    <div className="text-[#4A0A09]">
+    <div className="">
       <div className="max-w-7xl m-auto p-2">
         <Head>
           <title>Услуги по банкротству граждан</title>

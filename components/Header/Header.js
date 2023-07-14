@@ -1,35 +1,80 @@
-import NavMobile from './NavMobile';
-import { useRouter } from 'next/router';
-import HeaderCenter from './HeaderCenter';
-import HeaderTop from './HeaderTop';
-import BurgerMenu from './BurgerMenu';
+import { useRouter } from "next/router";
+import BurgerMenu from "./BurgerMenu";
+import React from "react";
+import { pages } from "./NavPanel";
+import Link from "next/link";
+import CallButton from "./CallButton";
+
+// scroll direction hook
+function useScrollDirection() {
+  const [scrollDirection, setScrollDirection] = React.useState(null);
+
+  React.useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY;
+      const direction = scrollY > lastScrollY ? "down" : "up";
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
+      ) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
+    };
+  }, [scrollDirection]);
+
+  return scrollDirection;
+}
 
 const Header = () => {
   const router = useRouter();
   const currentRoute = router.pathname;
+  const scrollDirection = useScrollDirection();
 
   return (
     <header
-      className={`${
-        currentRoute === '/' ? 'h-screen' : ''
-      } bg-[#4e0110] m-auto relative`}
+      className={`sticky z-50 text-[#fafafa] w-full ${
+        scrollDirection === "down" ? "-top-24" : "top-0"
+      } h-24 bg-dots-red transition-all duration-500`}
     >
-      <div className="px-7">
-        <div className="hidden sm:block max-w-7xl m-auto">
-          {currentRoute === '/' ? (
-            <>
-              <HeaderTop />
-              <HeaderCenter />
-            </>
-          ) : (
-            <HeaderTop />
-          )}
+      <nav className="max-w-7xl m-auto flex items-center h-full relative">
+        <div className="w-full flex justify-between items-center">
+          <div className="flex items-center">
+            <Link href="/">
+              <h1 className="text-center md:text-left text-2xl uppercase ">
+                Центр Банкротства
+              </h1>
+            </Link>
+          </div>
+          <div className="hidden lg:block">
+            {pages.map((el) => (
+              <Link
+                key={el.id}
+                href={el.path}
+                className="mx-3 hover:text-[#E3E36A] hover:underline underline-offset-8"
+              >
+                {el.title}
+              </Link>
+            ))}
+          </div>
+          <div className="hidden lg:block animate-pulse">
+            {currentRoute === "/" ? (
+              <Link href="#consult">Связаться с нами</Link>
+            ) : (
+              <CallButton />
+            )}
+          </div>
         </div>
-        <NavMobile />
-        <div className="absolute top-8 right-1 md:hidden">
+        <div className="absolute top-8 right-1 lg:hidden">
           <BurgerMenu />
         </div>
-      </div>
+      </nav>
     </header>
   );
 };
