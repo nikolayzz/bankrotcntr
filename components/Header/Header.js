@@ -1,9 +1,9 @@
-import { useRouter } from "next/router";
-import BurgerMenu from "./BurgerMenu";
-import React from "react";
-import { pages } from "./NavPanel";
-import Link from "next/link";
-import CallButton from "./CallButton";
+import { useRouter } from 'next/router';
+import BurgerMenu from './BurgerMenu';
+import React from 'react';
+import { pages } from './NavPanel';
+import Link from 'next/link';
+import CallButton from './CallButton';
 
 // scroll direction hook
 function useScrollDirection() {
@@ -14,7 +14,7 @@ function useScrollDirection() {
 
     const updateScrollDirection = () => {
       const scrollY = window.scrollY;
-      const direction = scrollY > lastScrollY ? "down" : "up";
+      const direction = scrollY > lastScrollY ? 'down' : 'up';
       if (
         direction !== scrollDirection &&
         (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
@@ -23,9 +23,9 @@ function useScrollDirection() {
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
-    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    window.addEventListener('scroll', updateScrollDirection); // add event listener
     return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
     };
   }, [scrollDirection]);
 
@@ -40,14 +40,14 @@ const Header = () => {
   return (
     <header
       className={`sticky z-50 text-[#fafafa] w-full ${
-        scrollDirection === "down" ? "-top-24" : "top-0"
+        scrollDirection === 'down' ? '-top-24' : 'top-0'
       } h-24  transition-all duration-500 bg-dots-red`}
     >
       <nav className="max-w-7xl m-auto flex items-center h-full relative lg:p-2">
         <div className="w-full flex justify-between items-center">
-          <div className="flex justify-between items-center m-auto lg:block lg:m-0">
+          <div className="pl-5 lg:m-0">
             <Link href="/">
-              <h1 className="text-center md:text-left text-2xl uppercase ">
+              <h1 className="md:text-left text-2xl uppercase ">
                 Центр Банкротства
               </h1>
             </Link>
@@ -64,7 +64,7 @@ const Header = () => {
             ))}
           </div>
           <div className="hidden lg:block animate-pulse">
-            {currentRoute === "/" ? (
+            {currentRoute === '/' ? (
               <Link href="#consult">Связаться с нами</Link>
             ) : (
               <CallButton />

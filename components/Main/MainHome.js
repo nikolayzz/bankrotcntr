@@ -34,26 +34,18 @@ const MainHome = () => {
       <section className="text-[#4e0110] m-auto">
         <div className="max-w-7xl m-auto p-2 ">
           <div className="m-auto flex flex-col pt-3">
+            {/* <h2 className="text-2xl md:text-4xl">
+              Мы можем решить Вашу проблему
+            </h2> */}
             <div className="lg:flex m-auto justify-center items-center">
-              <div className="hidden lg:block pt-5">
-                <Image
-                  src="/images/book-and-hammer.svg"
-                  width={500}
-                  height={500}
-                  alt="book-and-hammer"
-                />
-              </div>
-              <div className="lg:w-1/2 lg:ml-5 ">
-                <h2 className="font-semibold text-lg md:text-xl lg:text-3xl ">
-                  Мы можем решить Вашу проблему
-                </h2>
+              <div className="lg:w-1/2">
                 <div className="text-lg md:text-xl">
                   <div>
                     <span className="font-semibold">Центр Банкротства</span> -
                     это юридическая фирма, оказывающая услуги по сопровождению
                     дел о банкротстве как граждан, так и юридических лиц.
                   </div>
-
+                  <br />
                   <div>
                     Благодаря узкой специализации нашей фирмы и большому
                     практическому опыту нашей команды, мы гарантируем
@@ -62,14 +54,16 @@ const MainHome = () => {
                   </div>
                 </div>
               </div>
+              <div className="hidden lg:block pt-5">
+                <Image
+                  src="/images/book-and-hammer.svg"
+                  width={500}
+                  height={500}
+                  alt="book-and-hammer"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-dots-red m-auto">
-        <div className="max-w-7xl m-auto p-2 ">
-          <ServicesList />
         </div>
       </section>
 
@@ -130,6 +124,12 @@ const MainHome = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-dots-red m-auto">
+        <div className="max-w-7xl m-auto p-2 ">
+          <ServicesList />
         </div>
       </section>
 
