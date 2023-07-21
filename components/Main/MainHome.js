@@ -1,8 +1,8 @@
-import ServicesList from "../Services/ServicesList";
-import Image from "next/image";
-import HomeTabs from "./HomeTabs";
-import HomeText from "./HomeText";
-import ContactForm from "./ContactForm";
+import ServicesList from '../Services/ServicesList';
+import Image from 'next/image';
+import HomeTabs from './HomeTabs';
+import HomeText from './HomeText';
+import ContactForm from './ContactForm';
 
 const MainHome = () => {
   return (
@@ -49,9 +49,9 @@ const MainHome = () => {
                 </h2>
                 <div className="text-lg md:text-xl">
                   <div>
-                    <span className="">Центр Банкротства</span> - это
-                    юридическая фирма, оказывающая услуги по сопровождению дел о
-                    банкротстве как граждан, так и юридических лиц.
+                    <span className="font-semibold">Центр Банкротства</span> -
+                    это юридическая фирма, оказывающая услуги по сопровождению
+                    дел о банкротстве как граждан, так и юридических лиц.
                   </div>
 
                   <div>
