@@ -35,7 +35,7 @@ const MainHome = () => {
         <div className="max-w-7xl m-auto p-2 ">
           <div className="m-auto flex flex-col pt-3">
             <div className="lg:flex m-auto justify-center items-center">
-              <div className="pt-5">
+              <div className="hidden lg:block pt-5">
                 <Image
                   src="/images/book-and-hammer.svg"
                   width={500}
@@ -44,7 +44,7 @@ const MainHome = () => {
                 />
               </div>
               <div className="lg:w-1/2 lg:ml-5 ">
-                <h2 className=" text-lg md:text-xl lg:text-3xl ">
+                <h2 className="font-semibold text-lg md:text-xl lg:text-3xl ">
                   Мы можем решить Вашу проблему
                 </h2>
                 <div className="text-lg md:text-xl">
@@ -164,9 +164,7 @@ const MainHome = () => {
       </section>
 
       <section>
-        <div className="max-w-7xl m-auto p-10 text-[#4e0110]">
-          <ContactForm />
-        </div>
+        <ContactForm />
       </section>
     </div>
   );

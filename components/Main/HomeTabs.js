@@ -182,7 +182,7 @@ function HomeTabs() {
                   />
                   <div className="text-[#E3E36A]">{el.title}</div>
                 </div>
-                <div>{el.text}</div>
+                <div className="">{el.text}</div>
               </div>
             ))}
           </div>

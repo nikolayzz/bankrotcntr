@@ -27,7 +27,7 @@ const ContactForm = () => {
 
   return (
     <section id="consult" className="m-auto text-[#4e0110]">
-      <div className="max-w-7xl m-auto p-10">
+      <div className="max-w-7xl m-auto p-10 mt-20 lg:mt-0">
         <div className="border-4 rounded-3xl border-[#4e0110]/[0.6] bg-lines lg:p-10 lg:min-h-[600px] md:w-[700px] lg:w-[1000px] m-auto relative">
           <div className="absolute left-1/2 lg:top-1/2 lg:left-0 -translate-y-1/2 -translate-x-1/2 border-4 border-[#4e0110]/[0.6] rounded-full h-52 w-52">
             <Image
@@ -41,6 +41,7 @@ const ContactForm = () => {
           <h1 className="text-2xl text-center lg:text-left md:text-4xl animated-text pl-2 pt-28 lg:pt-0 lg:pl-24 xl:px-44 my-3">
             Бесплатная юридическая консультация по банкротству
           </h1>
+          <p className="text-center text-lg">Запишитесь прямо сейчас</p>
 
           <form
             encType="multipart/form-data"
@@ -49,14 +50,14 @@ const ContactForm = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col lg:pl-24 xl:px-44 lg:pr-24 p-2"
           >
-            <label>name</label>
+            <label>Имя</label>
             <input
               {...register("name")}
               defaultValue="test"
               className="border rounded-md my-3 p-3"
             />
 
-            <label>phone</label>
+            <label>Телефон</label>
             <input
               {...register("phone", { required: true, maxLength: 10 })}
               className="border rounded-md my-3 p-3"
