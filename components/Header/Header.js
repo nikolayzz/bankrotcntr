@@ -41,7 +41,7 @@ const Header = () => {
     <header
       className={`sticky z-50 text-[#fafafa] w-full ${
         scrollDirection === "down" ? "-top-24" : "top-0"
-      } h-24 bg-dots-red transition-all duration-500`}
+      } h-24  transition-all duration-500 bg-dots-red`}
     >
       <nav className="max-w-7xl m-auto flex items-center h-full relative lg:p-2">
         <div className="w-full flex justify-between items-center">

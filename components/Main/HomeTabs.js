@@ -9,6 +9,21 @@ const tabStyles = {
   color: "#fafafa",
 };
 
+const tabsTitles = [
+  {
+    id: 1,
+    title: "Преимущества работы с нами",
+  },
+  {
+    id: 2,
+    title: "Финансовые выгоды",
+  },
+  {
+    id: 3,
+    title: "Что будет, если не списать долг?",
+  },
+];
+
 const tabOne = [
   {
     id: 1,
@@ -119,70 +134,104 @@ function HomeTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-          textColor="secondary"
-          indicatorColor="secondary"
-          allowScrollButtonsMobile
-          variant="scrollable"
-        >
-          <Tab
-            sx={tabStyles}
-            label="Преимущества работы с нами"
-            {...a11yProps(0)}
-          />
-          <Tab sx={tabStyles} label="Финансовые выгоды" {...a11yProps(1)} />
-          <Tab
-            sx={tabStyles}
-            label="Что будет, если не списать долг?"
-            {...a11yProps(2)}
-          />
-        </Tabs>
+    <Box sx={{ width: "100%", margin: "auto" }}>
+      <Box
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+        }}
+      >
+        <div className="m-auto flex items-center justify-center">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+            textColor="secondary"
+            indicatorColor="secondary"
+            allowScrollButtonsMobile
+            variant="scrollable"
+          >
+            <Tab
+              sx={tabStyles}
+              label="Преимущества работы с нами"
+              {...a11yProps(0)}
+            />
+            <Tab sx={tabStyles} label="Финансовые выгоды" {...a11yProps(1)} />
+            <Tab
+              sx={tabStyles}
+              label="Что будет, если не списать долг?"
+              {...a11yProps(2)}
+            />
+          </Tabs>
+        </div>
       </Box>
-      <TabPanel value={value} index={0}>
-        <div className="lg:grid lg:grid-cols-2">
-          {tabOne.map((el) => (
-            <div key={el.id} className="lg:w-96 flex flex-col  justify-center">
-              <div className="flex items-center">
-                <Image src="/images/ok.svg" width={30} height={30} />
-                <div className="text-[#E3E36A]">{el.title}</div>
+      <div className="m-auto flex items-center justify-center">
+        <TabPanel value={value} index={0}>
+          <div className="lg:grid lg:grid-cols-2">
+            {tabOne.map((el) => (
+              <div
+                key={el.id}
+                className="lg:w-96 flex flex-col  justify-center"
+              >
+                <div className="flex items-center">
+                  <Image
+                    src="/images/ok.svg"
+                    width={30}
+                    height={30}
+                    alt="ok-logo"
+                  />
+                  <div className="text-[#E3E36A]">{el.title}</div>
+                </div>
+                <div>{el.text}</div>
               </div>
-              <div>{el.text}</div>
-            </div>
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <div className="lg:grid lg:grid-cols-2">
-          {tabTwo.map((el) => (
-            <div key={el.id} className="lg:w-96 flex flex-col  justify-center">
-              <div className="flex items-center">
-                <Image src="/images/ok.svg" width={30} height={30} />
-                <div className="text-[#E3E36A]">{el.title}</div>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <div className="lg:grid lg:grid-cols-2">
+            {tabTwo.map((el) => (
+              <div
+                key={el.id}
+                className="lg:w-96 flex flex-col  justify-center"
+              >
+                <div className="flex items-center">
+                  <Image
+                    src="/images/ok.svg"
+                    width={30}
+                    height={30}
+                    alt="ok-logo"
+                  />
+                  <div className="text-[#E3E36A]">{el.title}</div>
+                </div>
+                <div>{el.text}</div>
               </div>
-              <div>{el.text}</div>
-            </div>
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <div className="lg:grid lg:grid-cols-2">
-          {tabThree.map((el) => (
-            <div key={el.id} className="lg:w-96 flex flex-col  justify-center">
-              <div className="flex items-center">
-                <Image src="/images/ok.svg" width={30} height={30} />
-                <div className="text-[#E3E36A]">{el.title}</div>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <div className="lg:grid lg:grid-cols-2">
+            {tabThree.map((el) => (
+              <div
+                key={el.id}
+                className="lg:w-96 flex flex-col  justify-center"
+              >
+                <div className="flex items-center">
+                  <Image
+                    src="/images/ok.svg"
+                    width={30}
+                    height={30}
+                    alt="ok-logo"
+                  />
+                  <div className="text-[#E3E36A]">{el.title}</div>
+                </div>
+                <div>{el.text}</div>
               </div>
-              <div>{el.text}</div>
-            </div>
-          ))}
-        </div>
-      </TabPanel>
+            ))}
+          </div>
+        </TabPanel>
+      </div>
     </Box>
   );
 }
+
 export default HomeTabs;

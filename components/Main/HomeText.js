@@ -31,7 +31,7 @@ const HomeText = () => {
   return (
     <div className="lg:flex lg:justify-center lg:items-center">
       <div className="lg:w-1/2">
-        <Image src="/images/backgr.png" width={500} height={500} />
+        <Image src="/images/backgr.png" width={500} height={500} alt="backgr" />
       </div>
       <div className="lg:w-1/2">
         <div className="text-[#E3E36A]  lg:text-3xl ">
