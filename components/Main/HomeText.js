@@ -35,7 +35,7 @@ const HomeText = () => {
         <Image src="/images/backgr.png" width={500} height={500} alt="backgr" />
       </div>
       <div className="lg:w-1/2">
-        <div className="text-[#E3E36A] lg:text-3xl mb-5">
+        <div className="text-[#4e0110]/70 lg:text-3xl mb-5">
           Почему для списания долгов обращаются к нам?
         </div>
         <div>

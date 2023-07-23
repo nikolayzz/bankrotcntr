@@ -15,7 +15,7 @@ const BurgerMenu = () => {
 
   return (
     <>
-      <button onClick={() => toggleDrawer(true)}>
+      <button onClick={() => toggleDrawer(true)} className="text-[#4e0110] ">
         <MenuIcon fontSize="large" />
       </button>
       <SwipeableDrawer
@@ -34,14 +34,12 @@ const BurgerMenu = () => {
         onClose={() => toggleDrawer(false)}
       >
         <Box onClick={() => toggleDrawer(false)}>
-          <div className="bg-[#fafafa]">
+          <div className="bg-[#fafafa] py-5 flex justify-center items-center">
             <Image
-              src="/images/m-logo.png"
-              height={100}
-              width={100}
-              className="h-auto w-auto m-auto"
+              src="/images/mini-logo1.svg"
+              height={80}
+              width={80}
               alt="logo"
-              priority
             />
 
             <div

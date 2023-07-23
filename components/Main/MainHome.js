@@ -3,35 +3,48 @@ import Image from 'next/image';
 import HomeTabs from './HomeTabs';
 import HomeText from './HomeText';
 import ContactForm from './ContactForm';
+import Link from 'next/link';
 
 const MainHome = () => {
   return (
     // стартовый экран
-    <div>
-      <section className="bg-dots-red text-[#fafafa] m-auto">
+    <main>
+      <section className="m-auto py-10">
         <div className="max-w-7xl m-auto p-2">
-          <div className=" lg:flex lg:items-center m-auto">
-            <div className="lg:w-1/2 h-full">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl animated-text">
-                <span className="text-[#E3E36A]">Центр Банкротства</span> -
-                помогаем избавиться от долгов
-              </h1>
-            </div>
-
-            <div className=" lg:w-1/2  flex justify-center">
-              <Image
-                src="/images/home-logo.svg"
-                width={500}
-                height={500}
-                alt="home-logo"
-              />
-            </div>
+          <div className="my-5 text-[#4e0110] text-center text-5xl sm:text-8xl tracking-tight font-bold">
+            Центр Банкротства
           </div>
+          <div className="my-5 pt-5 text-center text-[#4e0110]/80 text-3xl">
+            помогаем избавиться от долгов
+          </div>
+
+          <div className="py-10 flex gap-5 justify-center items-center">
+            <button className="border border-[#4e0110]/80 hover:bg-[#4e0110]/80 hover:text-[#fafafa] text-[#4e0110]/80 rounded-lg w-60 text-xl h-16">
+              Узнать подробнее
+            </button>
+            <Link
+              href="#consult"
+              className="border border-[#4e0110]/80 hover:bg-[#4e0110]/80 hover:text-[#fafafa] text-[#4e0110]/80 rounded-lg w-60 text-xl h-16"
+            >
+              <span className="flex justify-center items-center text-center">
+                Записаться на консультацию
+              </span>
+            </Link>
+          </div>
+
+          {/* <div className="flex justify-center">
+            <Image
+              src="/images/home-logo.svg"
+              width={500}
+              height={500}
+              alt="home-logo"
+            />
+          </div> */}
         </div>
       </section>
 
       {/* баннер и услуги */}
-      <section className="text-[#4e0110] m-auto">
+      <section className="text-[#4e0110]/80 m-auto">
         <div className="max-w-7xl m-auto p-2 ">
           <div className="m-auto flex flex-col pt-3">
             {/* <h2 className="text-2xl md:text-4xl">
@@ -67,7 +80,7 @@ const MainHome = () => {
         </div>
       </section>
 
-      <section className="text-[#4e0110]  pt-5 m-auto">
+      <section className="text-[#4e0110]/80  pt-5 m-auto">
         <div className="max-w-7xl m-auto py-5 p-2 ">
           <h1 className="text-2xl md:text-4xl animated-text">
             Что дает банкротство гражданина?
@@ -127,14 +140,14 @@ const MainHome = () => {
         </div>
       </section>
 
-      <section className="bg-dots-red m-auto">
+      <section className="m-auto">
         <div className="max-w-7xl m-auto p-2 ">
           <ServicesList />
         </div>
       </section>
 
-      <section className="bg-dots-red m-auto ">
-        <div className="max-w-7xl m-auto p-10">
+      <section className="m-auto ">
+        <div className="max-w-7xl m-auto p-10 text-[#4e0110]/80">
           <HomeText />
         </div>
       </section>
@@ -142,8 +155,8 @@ const MainHome = () => {
       {/* миссия и текст */}
       <section className="m-auto ">
         <div className="max-w-7xl m-auto p-10">
-          <div className="text-[#4e0110] ">
-            <div className="border-l-4 border-[#4e0110] pl-5">
+          <div className="text-[#4e0110]/80 ">
+            <div className="border-l-4 border-[#4e0110]/80 pl-5">
               <h2 className="uppercase text-lg md:text-xl lg:text-3xl ">
                 Наша главная цель
               </h2>
@@ -157,7 +170,7 @@ const MainHome = () => {
         </div>
       </section>
 
-      <section className="bg-dots-red text-[#fafafa] lg:h-[412px] m-auto">
+      <section className="text-[#fafafa] bg-dots-red lg:h-[412px] m-auto">
         <div className="max-w-7xl m-auto p-10">
           <HomeTabs />
         </div>
@@ -166,7 +179,7 @@ const MainHome = () => {
       <section>
         <ContactForm />
       </section>
-    </div>
+    </main>
   );
 };
 
