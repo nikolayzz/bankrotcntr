@@ -13,7 +13,7 @@ const Header = () => {
 
   //backdrop-blur-xl backdrop-saturate-150 sticky top-0 z-50 bg-[#ffffff]/30 text-[#4e0110]/70 w-full h-16 transition-all duration-500
   return (
-    <header className="z-50 text-[#4e0110] flex justify-center items-center lg:block">
+    <header className="z-50 text-[#4e0110] flex justify-center items-center lg:block h-16 sm:h-20">
       <nav className="max-w-7xl m-auto flex items-center justify-between relative lg:p-2">
         <div className="">
           <Link href="/">

@@ -6,6 +6,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Box, Divider, List, ListItem, SwipeableDrawer } from '@mui/material';
 import { pages } from '../Header/NavPanel';
 import Socials from '../Contacts/Socials';
+import Phone from './Phone';
+import Info from './Info';
 
 const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
@@ -18,6 +20,7 @@ const BurgerMenu = () => {
       <button onClick={() => toggleDrawer(true)} className="text-[#4e0110] ">
         <MenuIcon fontSize="large" />
       </button>
+
       <SwipeableDrawer
         PaperProps={{
           sx: {
@@ -46,15 +49,11 @@ const BurgerMenu = () => {
               className="text-[#4e0110] absolute top-9 right-4"
               onClick={() => toggleDrawer(false)}
             >
-              <CloseIcon
-                fontSize="large"
-                viewBox="0 0 20 20"
-                // sx={{ position: 'absolute', top: '35px', right: '20px' }}
-              />
+              <CloseIcon fontSize="large" viewBox="0 0 20 20" />
             </div>
           </div>
 
-          <List sx={{ paddingTop: '30px' }}>
+          <List>
             {/* <Divider /> */}
             {pages.map((el) => (
               <div key={el.id}>
@@ -68,8 +67,17 @@ const BurgerMenu = () => {
             ))}
           </List>
 
-          <div className="bg-[#fafafa] h-28 flex justify-center items-center absolute bottom-0 right-0 left-0 ">
-            <Socials fill={'#4A0A09'} />
+          <div className="absolute bottom-10">
+            <div className="flex flex-col justify-center items-center text-xs text-center">
+              <Phone />
+              <div className="py-3">
+                Республика Калмыкия, город Элиста, ул. Братьев Алехиных, д. 29
+              </div>
+            </div>
+
+            <div className=" flex justify-center items-center">
+              <Socials fill={'#ffffff'} />
+            </div>
           </div>
         </Box>
       </SwipeableDrawer>
