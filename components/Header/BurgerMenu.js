@@ -36,8 +36,8 @@ const BurgerMenu = () => {
         onOpen={() => toggleDrawer(true)}
         onClose={() => toggleDrawer(false)}
       >
-        <Box onClick={() => toggleDrawer(false)}>
-          <div className="bg-[#fafafa] py-5 flex justify-center items-center">
+        <div className="h-full" onClick={() => toggleDrawer(false)}>
+          <div className="py-5 bg-[#fafafa] flex justify-center items-center">
             <Image
               src="/images/mini-logo1.svg"
               height={80}
@@ -56,8 +56,8 @@ const BurgerMenu = () => {
           <List>
             {/* <Divider /> */}
             {pages.map((el) => (
-              <div key={el.id}>
-                <ListItem sx={{ paddingBottom: '30px' }}>
+              <div key={el.id} className="py-2">
+                <ListItem>
                   <Link className="w-full text-xl text-center" href={el.path}>
                     {el.title}
                   </Link>
@@ -67,7 +67,7 @@ const BurgerMenu = () => {
             ))}
           </List>
 
-          <div className="absolute bottom-10">
+          <div className="mt-10 pt-10">
             <div className="flex flex-col justify-center items-center text-xs text-center">
               <Phone />
               <div className="py-3">
@@ -79,7 +79,7 @@ const BurgerMenu = () => {
               <Socials fill={'#ffffff'} />
             </div>
           </div>
-        </Box>
+        </div>
       </SwipeableDrawer>
     </>
   );
