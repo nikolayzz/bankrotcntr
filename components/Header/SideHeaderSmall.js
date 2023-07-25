@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Info from './Info';
 import { Context } from '@/pages/_app';
 
-const Header = () => {
+const SideHeaderSmall = () => {
   const props = useContext(Context);
   const openSideHeader = props.openSideHeader;
   const setOpenSideHeader = props.setOpenSideHeader;
@@ -20,7 +20,7 @@ const Header = () => {
     <header
       className={`w-full ${
         openSideHeader ? 'lg:w-48' : 'lg:w-32'
-      } py-2 lg:py-0 duration-200 fixed top-0  lg:left-0  lg:h-full  flex justify-center items-center z-50 bg-white lg:bg-inherit text-[#4e0110]`}
+      } duration-200 fixed top-0  lg:left-0  lg:h-full  flex justify-center items-center z-50 bg-white lg:bg-inherit text-[#4e0110]`}
     >
       <nav
         className={`${
@@ -66,7 +66,7 @@ const Header = () => {
         </div>
 
         <div
-          className={`hidden sm:block lg:hidden absolute right-0 top-1/2 ${
+          className={`hidden lg:block absolute right-0 top-1/2 ${
             !openSideHeader && 'rotate-180'
           } animate-pulse`}
           onClick={handleOpenSideHeader}
@@ -78,4 +78,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default SideHeaderSmall;

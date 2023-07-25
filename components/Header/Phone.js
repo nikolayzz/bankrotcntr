@@ -8,7 +8,7 @@ const Phone = () => {
         <PhoneIcon fontSize="small" />
         {/* <Image src="/images/phone.png" width={20} height={20}></Image> */}
       </div>
-      <span>+7 988 688 0777</span>
+      <span className="text-sm font-semibold">+7 988 688 0777</span>
     </div>
   );
 };

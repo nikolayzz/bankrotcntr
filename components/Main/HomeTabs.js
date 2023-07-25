@@ -9,21 +9,6 @@ const tabStyles = {
   color: '#fafafa',
 };
 
-const tabsTitles = [
-  {
-    id: 1,
-    title: 'Преимущества работы с нами',
-  },
-  {
-    id: 2,
-    title: 'Финансовые выгоды',
-  },
-  {
-    id: 3,
-    title: 'Что будет, если не списать долг?',
-  },
-];
-
 const tabOne = [
   {
     id: 1,

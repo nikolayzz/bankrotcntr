@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { useForm } from "react-hook-form";
+import Image from 'next/image';
+import { useForm } from 'react-hook-form';
 
 const ContactForm = () => {
   const {
@@ -9,14 +9,14 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: "",
-      phone: "",
+      name: '',
+      phone: '',
     },
   });
 
   const onSubmit = (data, event) => {
     fetch(event.target.action, {
-      method: "post",
+      method: 'post',
       body: new FormData(event.target),
     });
 
@@ -28,7 +28,7 @@ const ContactForm = () => {
   return (
     <section id="consult" className="m-auto text-[#4e0110]">
       <div className="max-w-7xl m-auto p-10 mt-20 lg:mt-0">
-        <div className="border-4 rounded-3xl border-[#4e0110]/[0.6] bg-lines lg:p-10 lg:min-h-[600px] md:w-[700px] lg:w-[1000px] m-auto relative">
+        <div className="border-4 rounded-3xl border-[#4e0110]/[0.6] bg-lines lg:p-10  m-auto relative">
           <div className="absolute left-1/2 lg:top-1/2 lg:left-0 -translate-y-1/2 -translate-x-1/2 border-4 border-[#4e0110]/[0.6] rounded-full h-52 w-52">
             <Image
               src="/images/chat.svg"
@@ -52,14 +52,14 @@ const ContactForm = () => {
           >
             <label>Имя</label>
             <input
-              {...register("name")}
+              {...register('name')}
               defaultValue="test"
               className="border rounded-md my-3 p-3"
             />
 
             <label>Телефон</label>
             <input
-              {...register("phone", { required: true, maxLength: 10 })}
+              {...register('phone', { required: true, maxLength: 10 })}
               className="border rounded-md my-3 p-3"
             />
             {errors.phone && <p>Это поле обязательно</p>}

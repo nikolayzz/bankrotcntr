@@ -3,10 +3,12 @@ import { Montserrat } from 'next/font/google';
 import { ThemeProvider, createTheme } from '@mui/material';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import { AnimatePresence, easeOut } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+
+export const Context = createContext('');
 
 const montserrat = Montserrat({
   weight: '400',
@@ -31,38 +33,45 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }) {
+  const [openSideHeader, setOpenSideHeader] = useState(true);
+
   const router = useRouter();
+
   return (
-    <ThemeProvider theme={theme}>
-      <div className="font-geometria text-[#fafafa]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={router.route}
-            initial="initialState"
-            animate="animateState"
-            exit="exitState"
-            transition={{
-              duration: 0.75,
-              ease: easeOut,
-            }}
-            variants={{
-              initialState: {
-                opacity: 0,
-              },
-              animateState: {
-                opacity: 1,
-              },
-              exitState: {},
-            }}
-          >
-            <Header />
-            <div className="mt-20">
-              <Component {...pageProps} />
-            </div>
-            <Footer />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </ThemeProvider>
+    <Context.Provider value={{ openSideHeader, setOpenSideHeader }}>
+      <ThemeProvider theme={theme}>
+        <div className="font-geometria text-[#fafafa]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={router.route}
+              initial="initialState"
+              animate="animateState"
+              exit="exitState"
+              transition={{
+                duration: 0.75,
+                ease: easeOut,
+              }}
+              variants={{
+                initialState: {
+                  opacity: 0,
+                },
+                animateState: {
+                  opacity: 1,
+                },
+                exitState: {},
+              }}
+            >
+              {/* mt-16 sm:mt-20 */}
+
+              <Header />
+              <div className={`mt-20 lg:mt-0 ${openSideHeader && 'lg:ml-48'}`}>
+                <Component {...pageProps} />
+              </div>
+              <Footer />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </ThemeProvider>
+    </Context.Provider>
   );
 }
