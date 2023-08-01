@@ -46,7 +46,7 @@ const Footer = () => {
             <Map
               width={"100%"}
               height={"100%"}
-              defaultState={{ center: [46.310264, 44.264486], zoom: 18 }}
+              defaultState={{ center: [46.310264, 44.264486], zoom: 17 }}
             >
               <Placemark geometry={[46.310264, 44.264486]} />
             </Map>

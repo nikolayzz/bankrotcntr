@@ -27,18 +27,18 @@ export default function Anketa() {
         </h1>
         <div className="my-5">
           {/* Имя */}
-          <div className="block mb-5">
+          <div className="flex flex-col justify-center items-center md:block text-center md:text-left mb-5">
             <span className="font-semibold">Имя:</span>
             <input
               type="text"
               placeholder="Имя"
               {...register("name", { required: true })}
-              className="border rounded-md p-1 ml-3 w-2/3"
+              className="border rounded-md p-1 md:ml-3 w-full md:w-2/3"
             />
           </div>
 
           {/* Телефон */}
-          <div className="block">
+          <div className="flex flex-col justify-center items-center md:block text-center md:text-left">
             <span className="font-semibold">Телефон:</span>
             <input
               type="tel"
@@ -46,7 +46,7 @@ export default function Anketa() {
               {...register("phone", {
                 required: true,
               })}
-              className="border rounded-md p-1 ml-3 w-64"
+              className="border rounded-md p-1 md:ml-3 w-full md:w-64"
             />
           </div>
         </div>
@@ -83,11 +83,21 @@ export default function Anketa() {
             Официальные доходы (зарплата, пенсия, иные выплаты):
           </span>
           <div>
-            <input {...register("incomes")} type="radio" value="yes" />
+            <input
+              {...register("incomes")}
+              type="radio"
+              value="yes"
+              className="accent-[#4e0110]"
+            />
             Да
           </div>
           <div>
-            <input {...register("incomes")} type="radio" value="no" />
+            <input
+              {...register("incomes")}
+              type="radio"
+              value="no"
+              className="accent-[#4e0110]"
+            />
             Нет
           </div>
           {watch("incomes") === "yes" ? (
@@ -96,7 +106,7 @@ export default function Anketa() {
               <input
                 {...register("incomeSize")}
                 type="number"
-                className="border rounded-md p-1 ml-3 w-64"
+                className="border rounded-md p-1 ml-3 w-64 "
                 placeholder="Укажите размер доходов"
               />
             </div>
@@ -115,11 +125,21 @@ export default function Anketa() {
             т.д.):
           </span>
           <div>
-            <input {...register("property")} type="radio" value="yes" />
+            <input
+              {...register("property")}
+              type="radio"
+              value="yes"
+              className="accent-[#4e0110]"
+            />
             Да
           </div>
           <div>
-            <input {...register("property")} type="radio" value="no" />
+            <input
+              {...register("property")}
+              type="radio"
+              value="no"
+              className="accent-[#4e0110]"
+            />
             Нет
           </div>
           {watch("property") === "yes" ? (
@@ -150,6 +170,7 @@ export default function Anketa() {
               {...register("propertyDeal", { required: true })}
               type="radio"
               value="yes"
+              className="accent-[#4e0110]"
             />
             Да
           </div>
@@ -158,6 +179,7 @@ export default function Anketa() {
               {...register("propertyDeal", { required: true })}
               type="radio"
               value="no"
+              className="accent-[#4e0110]"
             />
             Нет
           </div>
@@ -185,6 +207,7 @@ export default function Anketa() {
               {...register("zalog", { required: true })}
               type="radio"
               value="yes"
+              className="accent-[#4e0110]"
             />
             Да
           </div>
@@ -193,6 +216,7 @@ export default function Anketa() {
               {...register("zalog", { required: true })}
               type="radio"
               value="no"
+              className="accent-[#4e0110]"
             />
             Нет
           </div>
@@ -207,13 +231,23 @@ export default function Anketa() {
           </span>
           <label>
             <div>
-              <input {...register("kommersant")} type="radio" value="yes" />
+              <input
+                {...register("kommersant")}
+                type="radio"
+                value="yes"
+                className="accent-[#4e0110]"
+              />
               Да
             </div>
           </label>
           <label>
             <div>
-              <input {...register("kommersant")} type="radio" value="no" />
+              <input
+                {...register("kommersant")}
+                type="radio"
+                value="no"
+                className="accent-[#4e0110]"
+              />
               Нет
             </div>
           </label>
@@ -227,13 +261,23 @@ export default function Anketa() {
           <span className="font-semibold">Имеются несовершеннолетние дети</span>
           <label>
             <div>
-              <input {...register("haveChildren")} type="radio" value="yes" />
+              <input
+                {...register("haveChildren")}
+                type="radio"
+                value="yes"
+                className="accent-[#4e0110]"
+              />
               Да
             </div>
           </label>
           <label>
             <div>
-              <input {...register("haveChildren")} type="radio" value="no" />
+              <input
+                {...register("haveChildren")}
+                type="radio"
+                value="no"
+                className="accent-[#4e0110]"
+              />
               Нет
             </div>
           </label>
@@ -254,6 +298,7 @@ export default function Anketa() {
                 })}
                 type="radio"
                 value="yes"
+                className="accent-[#4e0110]"
               />
               Да
             </div>
@@ -266,6 +311,7 @@ export default function Anketa() {
                 })}
                 type="radio"
                 value="no"
+                className="accent-[#4e0110]"
               />
               Нет
             </div>
@@ -284,11 +330,17 @@ export default function Anketa() {
                   {...register("spouseIncomes")}
                   type="radio"
                   value="yes"
+                  className="accent-[#4e0110]"
                 />
                 Да
               </div>
               <div>
-                <input {...register("spouseIncomes")} type="radio" value="no" />
+                <input
+                  {...register("spouseIncomes")}
+                  type="radio"
+                  value="no"
+                  className="accent-[#4e0110]"
+                />
                 Нет
               </div>
               {watch("spouseIncomes") === "yes" ? (
@@ -318,6 +370,7 @@ export default function Anketa() {
                   {...register("commonProperty")}
                   type="radio"
                   value="yes"
+                  className="accent-[#4e0110]"
                 />
                 Да
               </div>
@@ -326,6 +379,7 @@ export default function Anketa() {
                   {...register("commonProperty")}
                   type="radio"
                   value="no"
+                  className="accent-[#4e0110]"
                 />
                 Нет
               </div>
@@ -346,15 +400,23 @@ export default function Anketa() {
         </div>
 
         {/* Кнопка */}
-        <input
-          type="submit"
-          disabled={!isValid}
-          className={`${
-            !isValid
-              ? "text-slate-400 bg-slate-600"
-              : "text-white bg-[#4e0110]/80"
-          } `}
-        />
+
+        <div className="m-auto text-center">
+          <p className="mb-2">
+            {isValid
+              ? "Нажмите кнопку ниже для отправки сведений"
+              : "Пожалуйста заполните все поля"}
+          </p>
+          <input
+            type="submit"
+            disabled={!isValid}
+            className={`${
+              !isValid
+                ? "text-slate-400 bg-[#4e0110]/80"
+                : "text-white bg-[#4e0110]/80 animate-pulse"
+            } rounded-lg w-52 p-1`}
+          />
+        </div>
       </form>
     </div>
   );

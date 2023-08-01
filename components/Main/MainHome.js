@@ -21,7 +21,7 @@ const MainHome = () => {
 
       {/* Почему наша компания */}
       <section className="m-auto ">
-        <div className="max-w-7xl m-auto p-10 text-[#4e0110]/80">
+        <div className="max-w-7xl m-auto p-10 ">
           <WhyUs />
         </div>
       </section>
@@ -35,7 +35,7 @@ const MainHome = () => {
 
       {/* tabs */}
       <section className="text-[#fafafa] lg:h-[412px] m-auto ">
-        <div className="max-w-7xl m-auto p-10  ">
+        <div className="max-w-7xl m-auto p-2">
           <div className="bg-dots-red rounded-3xl lg:py-5">
             <HomeTabs />
           </div>

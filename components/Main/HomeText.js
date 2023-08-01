@@ -32,7 +32,7 @@ const WhyUs = () => {
   return (
     <div>
       <div className="bg-dots-red p-10 rounded-3xl shadow-xl">
-        <div className="pl-5  text-[#E3E36A] border-l-4 border-[#E3E36A]/80 ">
+        <div className="pl-5 text-[#E3E36A] border-l-4 border-[#E3E36A]/80 ">
           <h2 className="uppercase text-lg md:text-xl lg:text-3xl ">
             Наша главная цель
           </h2>
@@ -56,7 +56,7 @@ const WhyUs = () => {
           <div className="text-[#4e0110] lg:text-3xl mb-5">
             Почему для списания долгов обращаются к нам?
           </div>
-          <div>
+          <div className="text-[#4e0110]/80">
             {text.map((el) => (
               <div key={el.id} className="sm:text-lg lg:text-xl p-1">
                 <VerifiedOutlinedIcon className="mr-4" />

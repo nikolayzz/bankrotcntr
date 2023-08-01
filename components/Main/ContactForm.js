@@ -70,7 +70,7 @@ const ContactForm = () => {
             <div className="flex items-center justify-center">
               <button
                 type="submit"
-                className="border  rounded-md w-48 bg-[#4e0110] m-auto lg:m-0 text-[#fafafa] p-2"
+                className="border rounded-lg w-52 p-1 bg-[#4e0110] m-auto lg:m-0 text-[#fafafa]"
               >
                 Кнопка
               </button>

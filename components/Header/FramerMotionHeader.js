@@ -9,8 +9,10 @@ import {
 import { pages } from "./NavPanel";
 import Link from "next/link";
 import BurgerMenu from "./BurgerMenu";
+import { useRouter } from "next/router";
 
 export default function FramerMotionHeader() {
+  const router = useRouter();
   const { scrollY } = useScroll();
   const scrollYRange = [0, 100, 100];
 
@@ -53,6 +55,11 @@ export default function FramerMotionHeader() {
     lastScrollY.current = val;
   });
 
+  const handleIconClick = (event) => {
+    event.preventDefault();
+    router.push("/");
+  };
+
   return (
     <motion.div
       initial="visible"
@@ -74,7 +81,8 @@ export default function FramerMotionHeader() {
           src="/images/mini-logo1.svg"
           style={{ width: imageSize, height: imageSize }}
           alt="mini-logo1"
-          className="bg-white border md:w-1/4"
+          className="bg-white border md:w-1/4 hover:cursor-pointer"
+          onClick={handleIconClick}
         />
         <div className="hidden md:flex ">
           {pages.map((el) => (
