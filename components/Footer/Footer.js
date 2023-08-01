@@ -1,11 +1,12 @@
-import Link from 'next/link';
-import { pages } from '../Header/NavPanel';
-import Socials from '../Contacts/Socials';
-import Info from '../Header/Info';
+import Link from "next/link";
+import { pages } from "../Header/NavPanel";
+import Socials from "../Contacts/Socials";
+import Info from "../Header/Info";
+import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 
 const Footer = () => {
   return (
-    <div className="bg-dots-red font-geometria py-10 px-2">
+    <div className="bg-dots-red font-geometria pt-10 pb-4 px-2">
       <div className="max-w-7xl m-auto text-center lg:text-left lg:flex lg:justify-between font-semibold">
         <div>(c) 2023 Все права защищены</div>
         <div>
@@ -38,6 +39,19 @@ const Footer = () => {
           <div className="my-4 text-sm">+7 988 688 0777</div>
           <div className="text-sm">bankrot.cntr@gmail.com</div>
         </div>
+      </div>
+      <div className="pt-10 ">
+        <YMaps>
+          <div className="h-96 m-auto">
+            <Map
+              width={"100%"}
+              height={"100%"}
+              defaultState={{ center: [46.310264, 44.264486], zoom: 18 }}
+            >
+              <Placemark geometry={[46.310264, 44.264486]} />
+            </Map>
+          </div>
+        </YMaps>
       </div>
     </div>
   );

@@ -1,14 +1,19 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 const MainAboutCompany = () => {
   return (
-    <div className="m-auto flex flex-col pt-3">
+    <section className="max-w-7xl m-auto flex flex-col pt-3">
+      <h1 className="text-2xl md:text-4xl animated-text text-[#E3E36A]">
+        Кто мы?
+      </h1>
       <div className="lg:flex m-auto items-center">
         <div className="lg:w-1/2">
           <div className="text-lg md:text-xl">
             <div>
-              <span className="font-semibold">Центр Банкротства</span> - это
-              юридическая фирма, оказывающая услуги по сопровождению дел о
+              <span className="font-semibold text-[#E3E36A]">
+                Центр Банкротства
+              </span>{" "}
+              - это юридическая фирма, оказывающая услуги по сопровождению дел о
               банкротстве как граждан, так и юридических лиц.
             </div>
             <br />
@@ -21,14 +26,14 @@ const MainAboutCompany = () => {
         </div>
         <div className="hidden lg:block pt-5">
           <Image
-            src="/images/book-and-hammer.svg"
-            width={500}
-            height={500}
-            alt="book-and-hammer"
+            src="/images/lawyer1.svg"
+            width={400}
+            height={400}
+            alt="lawyer1"
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

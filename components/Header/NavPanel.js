@@ -1,43 +1,41 @@
-import Link from 'next/link';
-import CallButton from './CallButton';
+import Link from "next/link";
+import CallButton from "./CallButton";
 
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import GavelRoundedIcon from '@mui/icons-material/GavelRounded';
-import CasesOutlinedIcon from '@mui/icons-material/CasesOutlined';
-import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
-import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
-
-import { BiHomeAlt2 } from 'react-icons/bi';
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import GavelRoundedIcon from "@mui/icons-material/GavelRounded";
+import CasesOutlinedIcon from "@mui/icons-material/CasesOutlined";
+import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
+import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlined";
 
 export const pages = [
   {
     id: 1,
-    title: 'Главная',
-    path: '/',
+    title: "Главная",
+    path: "/",
     icon: HomeOutlinedIcon,
   },
   {
     id: 2,
-    title: 'Услуги',
-    path: '/services',
+    title: "Услуги",
+    path: "/services",
     icon: GavelRoundedIcon,
   },
   {
     id: 3,
-    title: 'Практика',
-    path: '/practice',
+    title: "Практика",
+    path: "/practice",
     icon: CasesOutlinedIcon,
   },
   {
     id: 4,
-    title: 'Статьи',
-    path: '/articles',
+    title: "Статьи",
+    path: "/articles",
     icon: FeedOutlinedIcon,
   },
   {
     id: 5,
-    title: 'Контакты',
-    path: '/contacts',
+    title: "Контакты",
+    path: "/contacts",
     icon: AlternateEmailOutlinedIcon,
   },
 ];
@@ -55,7 +53,7 @@ const NavPanel = ({ navbar, activeColor, nonActiveColor }) => {
             key={el.id}
             href={el.path}
             className={`${
-              navbar ? 'text-[#4e0110]' : 'text-[#fafafa]'
+              navbar ? "text-[#4e0110]" : "text-[#4e0110]"
             } hover:underline hover:underline-offset-8 decoration-[#E3E36A] flex items-center justify-around font-body mr-1 md:mr-2 lg:mr-5 md:px-2 lg:px-3  text-lg uppercase`}
           >
             <div>

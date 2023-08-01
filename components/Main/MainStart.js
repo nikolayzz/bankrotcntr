@@ -1,38 +1,39 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const MainStart = () => {
   return (
-    <section className="m-auto py-10">
+    <section className="m-auto py-10 text-[#4e0110]/80">
       <div className="max-w-7xl m-auto p-2">
-        <div className="my-5 text-[#4e0110]  text-5xl sm:text-8xl tracking-tight font-bold">
+        <div className="my-5 text-[#4e0110] text-3xl sm:text-7xl tracking-tight font-bold">
           Центр Банкротства
-        </div>
-        <div className="my-5 pt-5  text-[#4e0110]/80 text-3xl">
-          помогаем избавиться от долгов
+          <div>Помогаем избавиться от долгов</div>
         </div>
 
-        <div className="md:flex md:gap-x-10">
-          <div className="py-10 flex gap-5 justify-center1 items-center1">
-            <button className="border border-[#4e0110]/80 hover:bg-[#4e0110]/80 hover:text-[#fafafa] text-[#4e0110]/80 rounded-lg w-60 text-xl h-16">
-              Узнать подробнее
-            </button>
+        <div className="md:flex md:gap-x-10 m-auto">
+          <div className="my-5 pt-5 text-lg sm:text-xl md:w-1/2 ">
+            <div>
+              <p className="mb-2">
+                Юридическое сопровождение процедуры банкротства от сбора
+                документов до полного списания задолженности.
+              </p>
+              <p>Гарантия результата: спишем долг или вернем деньги.</p>
+            </div>
+
             <Link
               href="#consult"
-              className="border border-[#4e0110]/80 hover:bg-[#4e0110]/80 hover:text-[#fafafa] text-[#4e0110]/80 rounded-lg w-60 text-xl h-16"
+              className="text-lg p-3 w-72 h-16 lg:my-20 border border-[#4e0110]/80 bg-[#4e0110]/80 text-white rounded-lg flex justify-center items-center"
             >
-              <span className="flex justify-center items-center text-center">
-                Записаться на консультацию
-              </span>
+              Записаться на консультацию
             </Link>
           </div>
 
-          <div>
+          <div className="md:w-1/2">
             <Image
-              src="/images/book-and-hammer.svg"
-              width={500}
-              height={500}
-              alt="book-and-hammer"
+              src="/images/moneyup.svg"
+              width={1000}
+              height={1000}
+              alt="moneyup"
             />
           </div>
         </div>
