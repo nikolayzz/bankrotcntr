@@ -2,13 +2,23 @@ import MainHome from '@/components/Main/MainHome';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 
-const Home = () => {
+export const getStaticProps = async () => {
+  const url = process.env.API_HOST;
+  const email = process.env.EMAIL;
+  const test = 'test';
+
+  return {
+    props: { url },
+  };
+};
+
+const Home = (props) => {
   return (
     <motion.div>
       <Head>
         <title>Центр Банкротства</title>
       </Head>
-      <MainHome />
+      <MainHome props={props} />
     </motion.div>
   );
 };

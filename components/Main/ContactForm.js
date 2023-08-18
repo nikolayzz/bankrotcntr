@@ -16,7 +16,8 @@ const customStyles = {
   },
 };
 
-const ContactForm = () => {
+const ContactForm = (props) => {
+  const url = props.props.props.url;
   const [step, setStep] = useState(0);
 
   // форма
@@ -37,11 +38,10 @@ const ContactForm = () => {
   const onSubmit = async (data, event) => {
     try {
       setStep(2);
-
-      await axios.post(`${process.env.API_HOST}/consult`, {
+      await axios.post(`${url}/consult/`, {
         data,
       });
-
+      // console.log(`${process.env.API_HOST}`);
       setStep(3);
       alert('Отправлено!');
       reset();
