@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { pages } from "../Header/NavPanel";
-import Socials from "../Contacts/Socials";
-import Info from "../Header/Info";
-import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
+import Link from 'next/link';
+import { pages } from '../Header/NavPanel';
+import Socials from '../Contacts/Socials';
+import Info from '../Header/Info';
 
 const Footer = () => {
   return (
@@ -39,19 +38,6 @@ const Footer = () => {
           <div className="my-4 text-sm">+7 988 688 0777</div>
           <div className="text-sm">bankrot.cntr@gmail.com</div>
         </div>
-      </div>
-      <div className="pt-10 ">
-        <YMaps>
-          <div className="h-96 m-auto">
-            <Map
-              width={"100%"}
-              height={"100%"}
-              defaultState={{ center: [46.310264, 44.264486], zoom: 17 }}
-            >
-              <Placemark geometry={[46.310264, 44.264486]} />
-            </Map>
-          </div>
-        </YMaps>
       </div>
     </div>
   );

@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 import {
   useTransform,
   motion,
   useAnimation,
   useScroll,
   useMotionValueEvent,
-} from "framer-motion";
-import { pages } from "./NavPanel";
-import Link from "next/link";
-import BurgerMenu from "./BurgerMenu";
-import { useRouter } from "next/router";
+} from 'framer-motion';
+import { pages } from './NavPanel';
+import Link from 'next/link';
+import BurgerMenu from './BurgerMenu';
+import { useRouter } from 'next/router';
 
 export default function FramerMotionHeader() {
   const router = useRouter();
@@ -20,13 +20,13 @@ export default function FramerMotionHeader() {
     return useTransform(scrollY, scrollYRange, values);
   };
 
-  const containerHeight = motionValueScrollYFactory(["100px", "60px", "60px"]);
+  const containerHeight = motionValueScrollYFactory(['100px', '60px', '60px']);
   const imageSize = motionValueScrollYFactory([70, 40, 40]);
-  const fontSize = motionValueScrollYFactory(["1.4rem", "1rem", "1rem"]);
+  const fontSize = motionValueScrollYFactory(['1.4rem', '1rem', '1rem']);
   const opacity = motionValueScrollYFactory([1, 0, 0]);
-  const fontAddress = motionValueScrollYFactory(["0.75rem", "0rem", "0rem"]);
-  const showAdress = motionValueScrollYFactory(["block", "none", "none"]);
-  const paddingHeaderX = motionValueScrollYFactory(["30px", "20px", "20px"]);
+  const fontAddress = motionValueScrollYFactory(['0.75rem', '0rem', '0rem']);
+  const showAdress = motionValueScrollYFactory(['block', 'none', 'none']);
+  const paddingHeaderX = motionValueScrollYFactory(['30px', '20px', '20px']);
 
   // uncomment to check values
   // scrollY.onChange((val) => console.log(`useViewportScroll.y: ${val}`));
@@ -35,7 +35,7 @@ export default function FramerMotionHeader() {
   const delta = React.useRef(0);
   const lastScrollY = React.useRef(0);
 
-  useMotionValueEvent(scrollY, "change", (val) => {
+  useMotionValueEvent(scrollY, 'change', (val) => {
     const diff = Math.abs(val - lastScrollY.current);
     if (val >= lastScrollY.current) {
       delta.current = delta.current >= 10 ? 10 : delta.current + diff;
@@ -48,16 +48,16 @@ export default function FramerMotionHeader() {
     // console.log(`lastScrollY: ${lastScrollY.current}`);
 
     if (delta.current >= 10 && val > 200) {
-      controls.start("hidden");
+      controls.start('hidden');
     } else if (delta.current <= -10 || val < 200) {
-      controls.start("visible");
+      controls.start('visible');
     }
     lastScrollY.current = val;
   });
 
   const handleIconClick = (event) => {
     event.preventDefault();
-    router.push("/");
+    router.push('/');
   };
 
   return (
@@ -65,8 +65,8 @@ export default function FramerMotionHeader() {
       initial="visible"
       animate={controls}
       variants={{
-        visible: { top: "0px" },
-        hidden: { top: "-100px" },
+        visible: { top: '0px' },
+        hidden: { top: '-100px' },
       }}
       // transition={{ duration: 1 }}
       style={{
@@ -81,7 +81,7 @@ export default function FramerMotionHeader() {
           src="/images/mini-logo1.svg"
           style={{ width: imageSize, height: imageSize }}
           alt="mini-logo1"
-          className="bg-white border md:w-1/4 hover:cursor-pointer"
+          className="bg-white border-4 md:w-1/4 hover:cursor-pointer"
           onClick={handleIconClick}
         />
         <div className="hidden md:flex ">

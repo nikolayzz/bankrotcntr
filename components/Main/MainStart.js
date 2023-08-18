@@ -1,38 +1,77 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+
+const texts = ['избавиться от долгов'];
 
 const MainStart = () => {
-  return (
-    <section className="m-auto py-10 text-[#4e0110]/80">
-      <div className="max-w-7xl m-auto p-2">
-        <div className="my-5 text-[#4e0110] text-3xl sm:text-7xl tracking-tight font-bold">
-          Центр Банкротства
-          <div>Помогаем избавиться от долгов</div>
-        </div>
+  const ref = useRef(null);
 
-        <div className="md:flex md:gap-x-10 m-auto">
-          <div className="my-5 pt-5 text-lg sm:text-xl md:w-1/2 ">
-            <div>
-              <p className="mb-2">
-                Юридическое сопровождение процедуры банкротства от сбора
-                документов до полного списания задолженности.
-              </p>
-              <p>Гарантия результата: спишем долг или вернем деньги.</p>
+  useEffect(() => {
+    let textIndex = 0;
+    let charIndex = 0;
+    let textContainer = ref.current;
+
+    const typeText = () => {
+      const text = texts[textIndex];
+
+      textContainer.textContent = text.slice(0, charIndex++);
+
+      if (charIndex <= text.length) {
+        setTimeout(typeText, 100);
+      }
+
+      // else {
+      //   setTimeout(eraseText, 1500);
+      // }
+    };
+
+    function eraseText() {
+      const text = texts[textIndex];
+      textContainer.textContent = text.slice(0, charIndex--);
+
+      if (charIndex >= 0) {
+        setTimeout(eraseText, 50);
+      } else {
+        textIndex = (textIndex + 1) % texts.length;
+        charIndex = 0;
+        setTimeout(typeText, 1500);
+      }
+    }
+
+    typeText();
+  }, []);
+
+  return (
+    <section className="m-auto sm:py-10 text-[#4e0110]">
+      <div className="max-w-7xl m-auto p-2">
+        <div className="md:flex justify-between m-auto">
+          <div className="my-5 sm:pt-5 text-lg sm:text-xl">
+            <div className="text-center sm:text-left">
+              <div className="mb-5">
+                <h1 className=" text-3xl sm:text-7xl tracking-tight font-bold">
+                  Центр Банкротства
+                </h1>
+              </div>
+              <div className="m-auto sm:m-0 text-3xl sm:text-5xl w-72 h-24 sm:h-40 font-bold">
+                <span>Помогаем </span>
+                <span ref={ref} className="printed-text"></span>
+              </div>
             </div>
 
             <Link
               href="#consult"
-              className="text-lg p-3 w-72 h-16 lg:my-20 border border-[#4e0110]/80 bg-[#4e0110]/80 text-white rounded-lg flex justify-center items-center"
+              className="hidden sm:flex text-lg p-3 w-72 h-16 lg:my-20 border border-[#4e0110]/80 bg-dots-red text-white rounded-lg  justify-center items-center"
             >
               Записаться на консультацию
             </Link>
           </div>
 
-          <div className="md:w-1/2">
+          <div>
             <Image
               src="/images/moneyup.svg"
-              width={1000}
-              height={1000}
+              width={500}
+              height={500}
               alt="moneyup"
             />
           </div>

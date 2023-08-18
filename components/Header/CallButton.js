@@ -1,9 +1,9 @@
-import { Dialog, DialogActions, DialogContent } from "@mui/material";
-import CallForm from "../Main/CallForm";
-import CallFormButton from "../Main/CallFormButton";
-import { useState } from "react";
+import { Dialog, DialogActions, DialogContent } from '@mui/material';
+import CallForm from '../Main/CallForm';
+import CallFormButton from '../Main/CallFormButton';
+import { useState } from 'react';
 
-const CallButton = ({ navbar, activeColor, nonActiveColor }) => {
+const CallButton = () => {
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -14,22 +14,17 @@ const CallButton = ({ navbar, activeColor, nonActiveColor }) => {
 
   return (
     <div>
-      <button
-        onClick={handleClickOpen}
-        className={`${
-          navbar ? "text-[#4e0110]" : "text-[#fafafa]"
-        }  text-lg py-2 px-4`}
-      >
+      <button onClick={handleClickOpen} className={`text-lg uppercase`}>
         Связаться с нами
       </button>
       <Dialog
         open={open}
         onClose={handleClose}
         sx={{
-          "& .MuiPaper-root": {
-            backgroundColor: "#4e0110",
+          '& .MuiPaper-root': {
+            backgroundColor: '#4e0110',
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")`,
-            color: "white",
+            color: 'white',
           },
         }}
       >
@@ -39,7 +34,7 @@ const CallButton = ({ navbar, activeColor, nonActiveColor }) => {
           />
         </DialogContent>
         <DialogActions
-          sx={{ display: "flex", justifyContent: "space-evenly", mb: "20px" }}
+          sx={{ display: 'flex', justifyContent: 'space-evenly', mb: '20px' }}
         >
           <button
             onClick={(event) => event.preventDefault()}

@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const MainAboutBankruptcy = () => {
   return (
-    <section className="text-[#4e0110]/80  pt-5 m-auto">
+    <section className="bg-dots-red  pt-5 m-auto">
       <div className="max-w-7xl m-auto py-5 p-2 ">
-        <h1 className="text-2xl md:text-4xl animated-text">
+        <h1 className="text-2xl md:text-4xl animated-text text-[#E3E36A]">
           Что дает банкротство гражданина?
         </h1>
 
@@ -20,7 +20,9 @@ const MainAboutBankruptcy = () => {
           </div>
           <div className="lg:w-2/3 lg:pl-10">
             <div className="pb-5">
-              <h2 className="text-xl font-semibold">Свобода от долгов</h2>
+              <h2 className="text-xl font-semibold text-[#E3E36A]">
+                Свобода от долгов
+              </h2>
               <p>
                 Больше не надо думать о платежах по кредитам. Суд спишет долги
                 по займам, распискам, ЖКХ, штрафам. Неустойки, штраф и пени
@@ -32,7 +34,7 @@ const MainAboutBankruptcy = () => {
               </p>
             </div>
             <div className="pb-5">
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-xl font-semibold text-[#E3E36A]">
                 Прекращение звонков из банков и от коллекторов
               </h2>
               <p>
@@ -43,7 +45,9 @@ const MainAboutBankruptcy = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-xl font-semibold">Снятие ограничений</h2>
+              <h2 className="text-xl font-semibold text-[#E3E36A]">
+                Снятие ограничений
+              </h2>
               <p>
                 После процедуры банкротства с должника снимаются аресты на
                 имущество и выезд за границу. Вы сможете выезжать поехать в

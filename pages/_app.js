@@ -1,19 +1,18 @@
-import "@/styles/globals.css";
-import { Montserrat } from "next/font/google";
-import { ThemeProvider, createTheme } from "@mui/material";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
-import { createContext, useState } from "react";
-import { AnimatePresence, easeOut } from "framer-motion";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
-import FramerMotionHeader from "@/components/Header/FramerMotionHeader";
+import '@/styles/globals.css';
+import { Montserrat } from 'next/font/google';
+import { ThemeProvider, createTheme } from '@mui/material';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
+import { createContext, useState } from 'react';
+import { AnimatePresence, easeOut } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
-export const Context = createContext("");
+export const Context = createContext('');
 
 const montserrat = Montserrat({
-  weight: "400",
-  subsets: ["cyrillic"],
+  weight: '400',
+  subsets: ['cyrillic'],
 });
 
 const theme = createTheme({
@@ -21,14 +20,14 @@ const theme = createTheme({
     fontFamily: [
       "'Montserrat', sans-serif",
       "'Roboto Condensed', sans-serif",
-    ].join(","),
+    ].join(','),
   },
   palette: {
     primary: {
-      main: "#fafafa",
+      main: '#fafafa',
     },
     secondary: {
-      main: "#E3E36A",
+      main: '#E3E36A',
     },
   },
 });
@@ -62,10 +61,8 @@ export default function App({ Component, pageProps }) {
                 exitState: {},
               }}
             >
-              {/* mt-16 sm:mt-20 */}
-
-              <FramerMotionHeader />
-              <div className="mt-24">
+              <Header />
+              <div>
                 <Component {...pageProps} />
               </div>
               <Footer />
