@@ -38,7 +38,7 @@ const ContactForm = (props) => {
   const onSubmit = async (data, event) => {
     try {
       setStep(2);
-      await axios.post(`${url}/consult/`, {
+      await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/consult/`, {
         data,
       });
       // console.log(`${process.env.API_HOST}`);
