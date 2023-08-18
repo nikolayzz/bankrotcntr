@@ -5,6 +5,9 @@ import { useEffect, useRef } from 'react';
 const texts = ['избавиться от долгов'];
 
 const MainStart = () => {
+  const nextpublicapihost = process.env.NEXT_PUBLIC_API_HOST;
+  // const apihost = process.env.API_HOST;
+
   const ref = useRef(null);
 
   useEffect(() => {
@@ -65,6 +68,10 @@ const MainStart = () => {
             >
               Записаться на консультацию
             </Link>
+            <div>
+              <div>Это NEXT_PUBLIC_API_HOST {nextpublicapihost}</div>
+              {/* <div>Это API_HOST {apihost}</div> */}
+            </div>
           </div>
 
           <div>
