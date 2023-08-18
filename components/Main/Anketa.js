@@ -13,7 +13,7 @@ export default function Anketa() {
   });
 
   const onSubmit = async (data) => {
-    await axios.post('http://localhost:3000/api/anketa', {
+    await axios.post(`${process.env.API_HOST}/anketa`, {
       data,
     });
     console.log(data);

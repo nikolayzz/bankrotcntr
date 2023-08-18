@@ -38,7 +38,7 @@ const ContactForm = () => {
     try {
       setStep(2);
 
-      await axios.post('http://localhost:3000/api/consult', {
+      await axios.post(`${process.env.API_HOST}/consult`, {
         data,
       });
 
