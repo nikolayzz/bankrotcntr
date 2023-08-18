@@ -1,16 +1,45 @@
-import sendEmail from '@/service/mailService';
+require('dotenv').config();
+const nodemailer = require('nodemailer');
 
-export default async function handler(req, res) {
+export default (req, res) => {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD,
+    },
+  });
+
   const message = {
     to: 'bankrot.cntr@gmail.com',
     subject: 'Запись на консультацию',
-    text: `Запись на консультацию от 
-    Имя: ${req.body.data.name}, Телефон: ${req.body.data.phone}
-    Тест: ${process.env.API_HOST}
-    `,
+    text: `Запись на консультацию от
+        Имя: ${req.body.data.name}, Телефон: ${req.body.data.phone}
+        Тест: ${process.env.API_HOST}`,
   };
 
-  sendEmail(message);
-  console.log(message);
-  res.send('Thank you');
-}
+  transporter.sendMail(message, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.send('error' + JSON.stringify(err));
+    } else {
+      console.log('mail send');
+      res.send('success');
+    }
+  });
+};
+
+// export default async function handler(req, res) {
+//   const message = {
+//     to: 'bankrot.cntr@gmail.com',
+//     subject: 'Запись на консультацию',
+//     text: `Запись на консультацию от
+//     Имя: ${req.body.data.name}, Телефон: ${req.body.data.phone}
+//     Тест: ${process.env.API_HOST}
+//     `,
+//   };
+
+//   sendEmail(message);
+//   console.log(message);
+//   res.send('Thank you');
+// }
