@@ -1,18 +1,18 @@
-import Image from 'next/image';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
+import Image from "next/image";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
   },
 };
 
@@ -28,8 +28,8 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: '',
-      phone: '',
+      name: "",
+      phone: "",
     },
   });
 
@@ -37,12 +37,12 @@ const ContactForm = () => {
   const onSubmit = async (data, event) => {
     try {
       setStep(2);
-      await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/consult/`, {
+      await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/consult`, {
         data,
       });
-      // console.log(`${process.env.API_HOST}`);
+      // console.log(`${process.env.NEXT_PUBLIC_API_HOST}`);
       setStep(3);
-      alert('Отправлено!');
+      alert("Отправлено!");
       reset();
     } catch (error) {
       setStep(4);
@@ -120,14 +120,14 @@ const ContactForm = () => {
             >
               <label>Имя</label>
               <input
-                {...register('name')}
+                {...register("name")}
                 defaultValue="test"
                 className="border rounded-md my-3 p-3"
               />
 
               <label>Телефон</label>
               <input
-                {...register('phone', { required: true, maxLength: 11 })}
+                {...register("phone", { required: true, maxLength: 11 })}
                 className="border rounded-md my-3 p-3"
               />
               {errors.phone && <p>Это поле обязательно</p>}

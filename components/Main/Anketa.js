@@ -1,5 +1,5 @@
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
 export default function Anketa() {
   const {
@@ -9,11 +9,11 @@ export default function Anketa() {
     reset,
     watch,
   } = useForm({
-    mode: 'onBlur',
+    mode: "onBlur",
   });
 
   const onSubmit = async (data) => {
-    await axios.post(`${process.env.API_HOST}/anketa`, {
+    await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/anketa`, {
       data,
     });
     console.log(data);
@@ -36,7 +36,7 @@ export default function Anketa() {
               <input
                 type="text"
                 placeholder="Имя"
-                {...register('name', { required: true })}
+                {...register("name", { required: true })}
                 className="border rounded-md p-1 md:ml-3 w-full md:w-2/3"
               />
             </div>
@@ -47,7 +47,7 @@ export default function Anketa() {
               <input
                 type="tel"
                 placeholder="Телефон"
-                {...register('phone', {
+                {...register("phone", {
                   required: true,
                 })}
                 className="border rounded-md p-1 md:ml-3 w-full md:w-64"
@@ -72,7 +72,7 @@ export default function Anketa() {
             </span>
             <input
               type="number"
-              {...register('debt', { required: true })}
+              {...register("debt", { required: true })}
               className="border rounded-md p-1 w-64"
               placeholder="500 000 руб."
             />
@@ -88,7 +88,7 @@ export default function Anketa() {
             </span>
             <div>
               <input
-                {...register('incomes')}
+                {...register("incomes")}
                 type="radio"
                 value="yes"
                 className="accent-[#4e0110]"
@@ -97,25 +97,25 @@ export default function Anketa() {
             </div>
             <div>
               <input
-                {...register('incomes')}
+                {...register("incomes")}
                 type="radio"
                 value="no"
                 className="accent-[#4e0110]"
               />
               Нет
             </div>
-            {watch('incomes') === 'yes' ? (
+            {watch("incomes") === "yes" ? (
               <div>
                 <span className="font-semibold">Размер дохода:</span>
                 <input
-                  {...register('incomeSize')}
+                  {...register("incomeSize")}
                   type="number"
                   className="border rounded-md p-1 ml-3 w-64"
                   placeholder="Укажите размер доходов"
                 />
               </div>
             ) : (
-              ''
+              ""
             )}
           </div>
 
@@ -130,7 +130,7 @@ export default function Anketa() {
             </span>
             <div>
               <input
-                {...register('property')}
+                {...register("property")}
                 type="radio"
                 value="yes"
                 className="accent-[#4e0110]"
@@ -139,26 +139,26 @@ export default function Anketa() {
             </div>
             <div>
               <input
-                {...register('property')}
+                {...register("property")}
                 type="radio"
                 value="no"
                 className="accent-[#4e0110]"
               />
               Нет
             </div>
-            {watch('property') === 'yes' ? (
+            {watch("property") === "yes" ? (
               <label>
                 <div className="font-semibold">
                   Перечислите имеющееся имущество:
                 </div>
                 <textarea
-                  {...register('propertyList')}
+                  {...register("propertyList")}
                   type="text"
                   className="border rounded-md p-1 ml-3 w-64"
                 />
               </label>
             ) : (
-              ''
+              ""
             )}
           </div>
 
@@ -172,7 +172,7 @@ export default function Anketa() {
             </span>
             <div>
               <input
-                {...register('propertyDeal', { required: true })}
+                {...register("propertyDeal", { required: true })}
                 type="radio"
                 value="yes"
                 className="accent-[#4e0110]"
@@ -181,26 +181,26 @@ export default function Anketa() {
             </div>
             <div>
               <input
-                {...register('propertyDeal', { required: true })}
+                {...register("propertyDeal", { required: true })}
                 type="radio"
                 value="no"
                 className="accent-[#4e0110]"
               />
               Нет
             </div>
-            {watch('propertyDeal') === 'yes' ? (
+            {watch("propertyDeal") === "yes" ? (
               <label>
                 <div className="font-semibold">
                   Опишите совершенные сделки с имуществом (имущество, дата
                   сделки)
                 </div>
                 <textarea
-                  {...register('propertyDealList')}
+                  {...register("propertyDealList")}
                   className="border rounded-md p-1 ml-3 w-64"
                 />
               </label>
             ) : (
-              ''
+              ""
             )}
           </div>
 
@@ -213,7 +213,7 @@ export default function Anketa() {
             </span>
             <div>
               <input
-                {...register('zalog', { required: true })}
+                {...register("zalog", { required: true })}
                 type="radio"
                 value="yes"
                 className="accent-[#4e0110]"
@@ -222,7 +222,7 @@ export default function Anketa() {
             </div>
             <div>
               <input
-                {...register('zalog', { required: true })}
+                {...register("zalog", { required: true })}
                 type="radio"
                 value="no"
                 className="accent-[#4e0110]"
@@ -241,7 +241,7 @@ export default function Anketa() {
             <label>
               <div>
                 <input
-                  {...register('kommersant')}
+                  {...register("kommersant")}
                   type="radio"
                   value="yes"
                   className="accent-[#4e0110]"
@@ -252,7 +252,7 @@ export default function Anketa() {
             <label>
               <div>
                 <input
-                  {...register('kommersant')}
+                  {...register("kommersant")}
                   type="radio"
                   value="no"
                   className="accent-[#4e0110]"
@@ -273,7 +273,7 @@ export default function Anketa() {
             <label>
               <div>
                 <input
-                  {...register('haveChildren')}
+                  {...register("haveChildren")}
                   type="radio"
                   value="yes"
                   className="accent-[#4e0110]"
@@ -284,7 +284,7 @@ export default function Anketa() {
             <label>
               <div>
                 <input
-                  {...register('haveChildren')}
+                  {...register("haveChildren")}
                   type="radio"
                   value="no"
                   className="accent-[#4e0110]"
@@ -304,7 +304,7 @@ export default function Anketa() {
             <label>
               <div>
                 <input
-                  {...register('isMarried', {
+                  {...register("isMarried", {
                     required: true,
                   })}
                   type="radio"
@@ -317,7 +317,7 @@ export default function Anketa() {
             <label>
               <div>
                 <input
-                  {...register('isMarried', {
+                  {...register("isMarried", {
                     required: true,
                   })}
                   type="radio"
@@ -333,7 +333,7 @@ export default function Anketa() {
 
           {/* Доходы супруга */}
           <div>
-            {watch('isMarried') === 'yes' ? (
+            {watch("isMarried") === "yes" ? (
               <div className="mt-3 mb-5">
                 <p className="text-center">Имущественное положение супруга</p>
                 <span className="font-semibold">
@@ -341,7 +341,7 @@ export default function Anketa() {
                 </span>
                 <div>
                   <input
-                    {...register('spouseIncomes')}
+                    {...register("spouseIncomes")}
                     type="radio"
                     value="yes"
                     className="accent-[#4e0110]"
@@ -350,28 +350,28 @@ export default function Anketa() {
                 </div>
                 <div>
                   <input
-                    {...register('spouseIncomes')}
+                    {...register("spouseIncomes")}
                     type="radio"
                     value="no"
                     className="accent-[#4e0110]"
                   />
                   Нет
                 </div>
-                {watch('spouseIncomes') === 'yes' ? (
+                {watch("spouseIncomes") === "yes" ? (
                   <label>
                     <span className="font-semibold">Размер дохода</span>
                     <input
-                      {...register('spouseIncomesSize')}
+                      {...register("spouseIncomesSize")}
                       type="number"
                       className="border rounded-md p-1 ml-3 w-64"
                     />
                   </label>
                 ) : (
-                  ''
+                  ""
                 )}
               </div>
             ) : (
-              ''
+              ""
             )}
           </div>
 
@@ -379,7 +379,7 @@ export default function Anketa() {
 
           {/* Имущество супруга */}
           <div>
-            {watch('isMarried') === 'yes' ? (
+            {watch("isMarried") === "yes" ? (
               <div className="mt-3 mb-5">
                 <span className="font-semibold">
                   Совместно нажитое имущество (недвижимость, транспортные
@@ -387,7 +387,7 @@ export default function Anketa() {
                 </span>
                 <div>
                   <input
-                    {...register('commonProperty')}
+                    {...register("commonProperty")}
                     type="radio"
                     value="yes"
                     className="accent-[#4e0110]"
@@ -396,30 +396,30 @@ export default function Anketa() {
                 </div>
                 <div>
                   <input
-                    {...register('commonProperty')}
+                    {...register("commonProperty")}
                     type="radio"
                     value="no"
                     className="accent-[#4e0110]"
                   />
                   Нет
                 </div>
-                {watch('commonProperty') === 'yes' ? (
+                {watch("commonProperty") === "yes" ? (
                   <label>
                     <div className="font-semibold">
                       Перечислите имеющееся имущество
                     </div>
                     <textarea
-                      {...register('commonPropertyList')}
+                      {...register("commonPropertyList")}
                       type="text"
                       className="border rounded-md p-1 ml-3 w-64"
                     />
                   </label>
                 ) : (
-                  ''
+                  ""
                 )}
               </div>
             ) : (
-              ''
+              ""
             )}
           </div>
 
@@ -433,7 +433,7 @@ export default function Anketa() {
                 className="text-white bg-[#4e0110]/80 rounded-lg w-52 p-1"
               />
             ) : (
-              'Пожалуйста заполните все поля'
+              "Пожалуйста заполните все поля"
             )}
           </div>
         </form>
