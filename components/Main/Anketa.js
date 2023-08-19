@@ -1,7 +1,21 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import React, { useState } from "react";
+import Modal from "react-modal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 export default function Anketa() {
+  const [step, setStep] = useState(0);
   const {
     register,
     handleSubmit,
@@ -12,12 +26,60 @@ export default function Anketa() {
     mode: "onBlur",
   });
 
+  // слушатель формы
   const onSubmit = async (data) => {
-    await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/anketa`, {
-      data,
-    });
-    console.log(data);
+    try {
+      setStep(2);
+      await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/anketa`, {
+        data,
+      });
+      setStep(3);
+      alert("Отправлено!");
+      reset();
+    } catch (error) {
+      setStep(4);
+      console.log(error);
+    }
   };
+
+  // модалка
+  function OpenModal({ action, step, close }) {
+    if (step === 1) {
+      return (
+        <>
+          <button onClick={close}>Закрыть</button>
+          <button onClick={action}>Отправить</button>
+        </>
+      );
+    } else if (step === 2) {
+      return (
+        <>
+          <button onClick={close}>Закрыть</button>
+          <p>Идет отправка</p>
+        </>
+      );
+    } else if (step === 3) {
+      return (
+        <>
+          <button onClick={close}>Закрыть</button>
+          <p>Заявка отправлена</p>
+        </>
+      );
+    } else if (step === 4) {
+      return (
+        <>
+          <button onClick={close}>Закрыть</button>
+          <p>Произошла ошибка</p>
+        </>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  function closeModal() {
+    setStep(0);
+  }
 
   return (
     <section>
@@ -431,10 +493,24 @@ export default function Anketa() {
                 type="submit"
                 disabled={!isValid}
                 className="text-white bg-[#4e0110]/80 rounded-lg w-52 p-1"
+                onClick={() => setStep(1)}
               />
             ) : (
               "Пожалуйста заполните все поля"
             )}
+
+            <Modal
+              isOpen={step !== 0}
+              onRequestClose={closeModal}
+              style={customStyles}
+              ariaHideApp={false}
+            >
+              <OpenModal
+                action={handleSubmit(onSubmit)}
+                step={step}
+                close={() => setStep(0)}
+              />
+            </Modal>
           </div>
         </form>
       </div>

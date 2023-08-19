@@ -26,36 +26,36 @@ export default (req, res) => {
     Имя: ${req.body.data.name}
     Телефон: ${req.body.data.phone}
     Размер задолженности: ${req.body.data.debt}
-    Доходы: ${req.body.data.incomes ? "Имеются" : "Отсутствуют"}
+    Доходы: ${req.body.data.incomes === "yes" ? "Имеются" : "Отсутствуют"}
     ${
       req.body.data.incomeSize
         ? `Размер доходов: ${req.body.data.incomeSize}`
         : ""
     }
-    Имущество: ${req.body.data.property ? "Имеется" : "Отсутствует"}
+    Имущество: ${req.body.data.property === "yes" ? "Имеется" : "Отсутствует"}
     ${
       req.body.data.propertyList
         ? `Список имущества: ${req.body.data.propertyList}`
         : ""
     }
     Сделки с имуществом: ${
-      req.body.data.propertyDeal ? "Имеются" : "Отсутствуют"
+      req.body.data.propertyDeal === "yes" ? "Имеются" : "Отсутствуют"
     }
     ${
       req.body.data.propertyDealList
         ? `Список сделок: ${req.body.data.propertyDealList}`
         : ""
     }
-    Залог: ${req.body.data.zalog ? "Имеется" : "Отсутствует"}
-    Статус ИП: ${req.body.data.kommersant ? "Имеется" : "Отсутствует"}
+    Залог: ${req.body.data.zalog === "yes" ? "Имеется" : "Отсутствует"}
+    Статус ИП: ${req.body.data.kommersant === "yes" ? "Имеется" : "Отсутствует"}
     Несовершеннолетние дети: ${
-      req.body.data.haveChildren ? "Имеются" : "Отсутствуют"
+      req.body.data.haveChildren === "yes" ? "Имеются" : "Отсутствуют"
     }
-    В браке: ${req.body.data.isMarried ? "Да" : "Нет"}
+    В браке: ${req.body.data.isMarried === "yes" ? "Да" : "Нет"}
     ${
       req.body.data.spouseIncomes
         ? `Доходы супруга: ${
-            req.body.data.spouseIncomes ? "Имеются" : "Отсутствуют"
+            req.body.data.spouseIncomes === "yes" ? "Имеются" : "Отсутствуют"
           }`
         : ""
     }
@@ -67,7 +67,7 @@ export default (req, res) => {
     ${
       req.body.data.commonProperty
         ? `Совместное имущество: ${
-            req.body.data.commonProperty ? "Имеется" : "Отсутствует"
+            req.body.data.commonProperty === "yes" ? "Имеется" : "Отсутствует"
           }`
         : ""
     }
@@ -84,7 +84,7 @@ export default (req, res) => {
       console.log(err);
       res.send("error" + JSON.stringify(err));
     } else {
-      console.log("mail send", process.env.PASSWORD);
+      console.log("mail send", req.body.data.incomes);
       res.send("success");
     }
   });

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -40,7 +39,7 @@ const ContactForm = () => {
       await axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/consult`, {
         data,
       });
-      // console.log(`${process.env.NEXT_PUBLIC_API_HOST}`);
+
       setStep(3);
       alert("Отправлено!");
       reset();
