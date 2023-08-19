@@ -12,13 +12,20 @@ import { motion } from 'framer-motion';
 //   };
 // };
 
+// export const getServerSideProps = () => {
+//   console.log(process.env.PASSWORD);
+//   return {
+//     props: {},
+//   };
+// };
+
 const Home = (props) => {
   return (
     <motion.div>
       <Head>
         <title>Центр Банкротства</title>
       </Head>
-      <MainHome props={props} />
+      <MainHome />
     </motion.div>
   );
 };

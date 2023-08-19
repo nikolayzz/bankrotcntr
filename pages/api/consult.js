@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 
 export default (req, res) => {
   const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
     service: 'gmail',
     auth: {
       user: process.env.EMAIL,
@@ -23,7 +24,7 @@ export default (req, res) => {
       console.log(err);
       res.send('error' + JSON.stringify(err));
     } else {
-      console.log('mail send');
+      console.log('mail send', process.env.PASSWORD);
       res.send('success');
     }
   });

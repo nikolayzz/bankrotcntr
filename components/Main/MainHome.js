@@ -32,7 +32,7 @@ const MainHome = (props) => {
       <Anketa />
 
       {/* Форма */}
-      <ContactForm props={props} />
+      <ContactForm />
     </main>
   );
 };

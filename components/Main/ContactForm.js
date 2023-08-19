@@ -16,8 +16,7 @@ const customStyles = {
   },
 };
 
-const ContactForm = (props) => {
-  const url = props.props.props.url;
+const ContactForm = () => {
   const [step, setStep] = useState(0);
 
   // форма
