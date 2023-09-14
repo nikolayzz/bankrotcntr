@@ -3,7 +3,7 @@ import { pages } from '../Header/NavPanel';
 import Socials from '../Contacts/Socials';
 import Info from '../Header/Info';
 
-const Footer = () => {
+const Footer = ({ socials }) => {
   return (
     <div className="bg-dots-red font-geometria pt-10 pb-4 px-2">
       <div className="max-w-7xl m-auto text-center lg:text-left lg:flex lg:justify-between font-semibold">
@@ -30,6 +30,18 @@ const Footer = () => {
           </h2>
           <Socials justify="justify-center" fill="#fafafa" />
         </div>
+        {/* API SOCIALS */}
+        {/* <div>
+          <ul>
+            {socials.map((el) => (
+              <li key={el.id}>
+                <a href={el.path} target="_blank">
+                  {el.icon}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div> */}
         <div>
           <h2 className="mt-5 lg:mt-0 uppercase font-semibold mb-4">
             Контакты

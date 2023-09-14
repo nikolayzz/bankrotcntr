@@ -5,10 +5,10 @@ const Test = () => {
     <div className="max-w-7xl m-auto">
       <h1 className="animated-text-wrapper">
         <span className="animated-text-span">ПОМОГАЕМ</span>
-        <div class="message">
-          <div class="word1">Избавиться</div>
-          <div class="word2">code</div>
-          <div class="word3">creating</div>
+        <div className="message">
+          <div className="word1">Избавиться</div>
+          <div className="word2">code</div>
+          <div className="word3">creating</div>
         </div>
       </h1>
     </div>

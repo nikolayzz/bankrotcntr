@@ -36,7 +36,7 @@ const MainHome = (props) => {
       <ContactForm />
 
       {/* Test */}
-      <Test />
+      {/* <Test /> */}
     </main>
   );
 };

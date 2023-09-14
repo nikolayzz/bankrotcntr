@@ -13,7 +13,12 @@ const Header = () => {
         <div className="max-w-7xl m-auto text-[#4e0110] py-3">
           <div className="flex items-center justify-between">
             <div className="flex justify-center items-center">
-              <Image src="images/mini-logo1.svg" width={50} height={50} />
+              <Image
+                src="images/mini-logo1.svg"
+                width={50}
+                height={50}
+                alt="logo"
+              />
               <span className="ml-5 text-xl font-semibold">
                 Центр Банкротства
               </span>
@@ -35,7 +40,12 @@ const Header = () => {
       <div className="md:hidden m-auto py-5 relative text-[#4e0110]">
         <div className="flex justify-center items-center">
           <Link href="/">
-            <Image src="images/mini-logo1.svg" width={50} height={50} />
+            <Image
+              src="images/mini-logo1.svg"
+              width={50}
+              height={50}
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="absolute right-5 top-7 md:hidden">

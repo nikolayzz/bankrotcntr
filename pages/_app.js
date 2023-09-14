@@ -7,13 +7,26 @@ import { createContext, useState } from 'react';
 import { AnimatePresence, easeOut } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { socials } from './api/data/socials';
+
+export const getStaticProps = async () => {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/socials`);
+  const data = await response.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      socials: data,
+    },
+  };
+};
 
 export const Context = createContext('');
-
-const montserrat = Montserrat({
-  weight: '400',
-  subsets: ['cyrillic'],
-});
 
 const theme = createTheme({
   typography: {
@@ -65,7 +78,7 @@ export default function App({ Component, pageProps }) {
               <div>
                 <Component {...pageProps} />
               </div>
-              <Footer />
+              <Footer socials={socials} />
             </motion.div>
           </AnimatePresence>
         </div>
