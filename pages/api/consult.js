@@ -1,10 +1,10 @@
-require("dotenv").config();
-const nodemailer = require("nodemailer");
+require('dotenv').config();
+const nodemailer = require('nodemailer');
 
 export default (req, res) => {
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    service: "gmail",
+    host: 'smtp.gmail.com',
+    service: 'gmail',
     port: 465,
     secure: true,
     logger: true,
@@ -20,7 +20,7 @@ export default (req, res) => {
   });
 
   const message = {
-    to: "bankrot.cntr@gmail.com",
+    to: 'bankrot.cntr@gmail.com',
     subject: `Запись на консультацию. Клиент ${req.body.data.name}`,
     text: `Клиент оставил заявку на сайте. 
     Имя: ${req.body.data.name}, Телефон: ${req.body.data.phone}`,
@@ -29,10 +29,10 @@ export default (req, res) => {
   transporter.sendMail(message, (err, data) => {
     if (err) {
       console.log(err);
-      res.send("error" + JSON.stringify(err));
+      res.send('error' + JSON.stringify(err));
     } else {
-      console.log("mail send", process.env.PASSWORD);
-      res.send("success");
+      console.log('mail send');
+      res.send('success');
     }
   });
 };

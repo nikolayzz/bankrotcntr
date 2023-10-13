@@ -6,9 +6,8 @@ import MainAboutCompany from './MainAboutCompany';
 import MainAboutBankruptcy from './MainAboutBankruptcy';
 import WhyUs from './HomeText';
 import Anketa from './Anketa';
-import Test from './Test';
 
-const MainHome = (props) => {
+const MainHome = () => {
   return (
     <main>
       {/* Приветствие */}
@@ -34,9 +33,6 @@ const MainHome = (props) => {
 
       {/* Форма */}
       <ContactForm />
-
-      {/* Test */}
-      {/* <Test /> */}
     </main>
   );
 };

@@ -68,5 +68,3 @@ const WhyUs = () => {
 };
 
 export default WhyUs;
-
-// old color form #4A0A09
